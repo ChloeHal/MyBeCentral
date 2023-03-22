@@ -1,0 +1,18 @@
+{
+  "name.label": "Name",
+  "lastname.label": "Last name",
+  "company.label": "Company",
+  "password.label": "Password",
+  "repeatPassword.label": "Repeat password",
+  "privacy.label": "I agree to the privacy policy",
+  "signUp.label": "Sign up",
+  "login.label": "Login",
+  "follows.label": "follows",
+  "filter.label": "filter",
+  "search.label": "search",
+  "placeholder.label": "Something to say?",
+  "validate.label": "Validate",
+  "hiring.label": "Hiring",
+  "internship.label": "Internship",
+  "event.lable": "Event"
+}
