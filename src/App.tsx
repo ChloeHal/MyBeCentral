@@ -1,15 +1,15 @@
-import React from 'react';
-import { useState } from "react";
-import navbar from "./navbar";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import Profile from "./pages/profile";
+import Feed from "./pages/feed";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/feed" element={<Feed />} />
+    </Routes>
   );
 }
 
