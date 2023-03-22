@@ -3,8 +3,10 @@ import Button from "../component/Button/Button";
 import Input from "../component/Input/Input";
 import { useNavigate } from "react-router-dom";
 import Notification from "../component/Notification/Notification"; // import the Notification component
+import { useTranslation } from "react-i18next";
 
 function Login() {
+  const { t } = useTranslation();
   const [isNotificationVisible, setIsNotificationVisible] = useState(false);
 
   const toggleNotification = () => {
@@ -54,33 +56,37 @@ function Login() {
   };
 
   return (
-    <section className="p-4">
-      <div className="bg-[#F4E3D7] rounded-xl w-full p-4 flex flex-col justify-center">
-        <form onSubmit={handleSubmit}>
-          <Input
-            type="text"
-            name="email"
-            label={"Email"}
-            value={loginFormData.email}
-            onChange={handleInputChange}
+    <section className="h-screen">
+      <form onSubmit={handleSubmit} className="p-4">
+        <Input
+          type="text"
+          name="email"
+          label={"Email"}
+          value={loginFormData.email}
+          onChange={handleInputChange}
+        />
+        <Input
+          type="password"
+          name="password"
+          label={t("password.label")}
+          value={loginFormData.password}
+          onChange={handleInputChange}
+        />
+        <div className="flex justify-around">
+          <Button
+            color="black"
+            name={t("login.label")}
+            type="submit"
+            clickHandler={() => console.log(loginFormData)}
           />
-          <Input
-            type="password"
-            name="password"
-            label={"Password"}
-            value={loginFormData.password}
-            onChange={handleInputChange}
+          <Button
+            color="green"
+            name={t("signUp.label")}
+            type="submit"
+            clickHandler={() => console.log(loginFormData)}
           />
-          <div className="flex justify-center">
-            <Button
-              color="black"
-              name="Login"
-              type="submit"
-              clickHandler={() => console.log(loginFormData)}
-            />
-          </div>
-        </form>
-      </div>
+        </div>
+      </form>
 
       <Notification
         title="Error"

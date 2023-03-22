@@ -1,0 +1,18 @@
+{
+  "name.label": "Nom",
+  "lastname.label": "Nom de famille",
+  "company.label": "Entreprise",
+  "password.label": "Mot de passe",
+  "repeatPassword.label": "Répeter le mot de passe",
+  "privacy.label": "J'accepte la politique de confidentialité",
+  "signUp.label": "S'inscrire",
+  "login.label": "Se connecter",
+  "follows.label": "suivi(e)s",
+  "filter.label": "filtrer",
+  "search.label": "chercher",
+  "placeholder.label": "Quelque chose à partager?",
+  "validate.label": "Valider",
+  "hiring.label": "Embauche",
+  "internship.label": "Stage",
+  "event.lable": "Evenement"
+}
