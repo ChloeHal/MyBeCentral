@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "../content/logo.png";
 import back from "../content/backblue.png";
+import Button from "../component/Button/Button";
+
 interface BannerProps {
   onLogin: () => void;
   onSignup: () => void;
@@ -14,23 +16,17 @@ const Banner: React.FC<BannerProps> = ({ onLogin, onSignup }) => {
     >
       <div className="text-center">
         <img src={logo} alt="Logo" className="h-48 mx-auto" />
-        <h1 className="text-black text-2xl font-bold mt-6 mb-8">
+        <h1 className="text-black text-xl font-title mt-6 mb-8">
           Connect and collaborate right next to your office
         </h1>
 
         <div className="flex justify-center mt-6">
-          <button
-            className="bg-blue-500 text-white rounded py-2 px-4 mr-2"
-            onClick={onLogin}
-          >
-            Se connecter
-          </button>
-          <button
-            className="bg-gray-500 text-white rounded py-2 px-4"
-            onClick={onSignup}
-          >
-            S'inscrire
-          </button>
+          <div className="mx-6">
+            <Button clickHandler={onSignup} name="S'inscrire" color="teal" />
+          </div>
+          <div className="mx-6">
+            <Button clickHandler={onLogin} name="Se connecter" color="black" />
+          </div>{" "}
         </div>
       </div>
     </div>
