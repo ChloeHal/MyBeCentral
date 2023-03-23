@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../content/logo.png";
 import back from "../content/backblue.png";
 import Button from "../component/Button/Button";
+import { useTranslation } from "react-i18next";
 
 interface BannerProps {
   onLogin: () => void;
@@ -9,6 +10,7 @@ interface BannerProps {
 }
 
 const Banner: React.FC<BannerProps> = ({ onLogin, onSignup }) => {
+  const { t } = useTranslation();
   return (
     <div
       style={{ backgroundImage: `url(${back})` }}
@@ -17,7 +19,7 @@ const Banner: React.FC<BannerProps> = ({ onLogin, onSignup }) => {
       <div className="text-center">
         <img src={logo} alt="Logo" className="h-48 mx-auto" />
         <h1 className="text-black text-xl font-title mt-6 mb-8">
-          Connect and collaborate right next to your office
+          {t("slogan.label")}
         </h1>
 
         <div className="flex justify-center mt-6">
