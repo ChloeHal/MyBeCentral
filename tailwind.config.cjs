@@ -5,6 +5,8 @@ module.exports = {
     fontFamily: {
       body: ['"Roboto Mono"'],
       sans: ['"Roboto Mono"'],
+      display: ['"Roboto Mono"'],
+      mono: ['"Roboto Mono"'],
     },
     extend: {
       colors: {
@@ -15,6 +17,7 @@ module.exports = {
       },
       fontFamily: {
         title: ["Rubik", "sans-serif"],
+        roboto: ["Roboto Mono", "sans-serif"],
       },
     },
   },
