@@ -1,6 +1,4 @@
-import Navbar from "../navbar";
-
 function Feed() {
-  return <Navbar/>;
+  return <h1>feed</h1>;
 }
 export default Feed;
