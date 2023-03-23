@@ -4,15 +4,13 @@ import Search from "./assets/search.png";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-black h-12 flex justify-between items-center p-2">
+    <nav className="bg-black h-12 flex items-center p-2">
       <img className="h-7" src={Logo} alt="Logo" />
 
       <form className="flex items-center justify-end flex-1">
         <label className="flex items-center text-white cursor-text rounded-full border border-1 border-white bg-transparent p-1 sm:w-40 md:w-48 lg:w-96 xl:w-96 2xl:w-100">
           <input
-            className="flex-1 bg-transparent outline-none"
-            type="text"
-            placeholder="Search"
+            className="place-items-stretch bg-transparent outline-none p-0.5" type="text" placeholder="Search"
           />
           <img className="h-4 ml-2" src={Search} alt="Search" />
         </label>
