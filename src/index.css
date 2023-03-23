@@ -13,10 +13,17 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border-bottom: 2px solid rgb(209 213 219);
+  border-bottom: 1px solid rgb(0, 0, 0);
   -webkit-text-fill-color: #170f1d;
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
   color: #170f1d;
+  --tw-border-opacity: 1;
+}
+input:checked + div {
+  border: solid #06d6a0 2px;
+}
+input:checked + div svg {
+  display: block;
 }
