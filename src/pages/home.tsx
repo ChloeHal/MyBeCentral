@@ -2,13 +2,27 @@ import React from "react";
 import logo from "../content/logo.png";
 import back from "../content/backblue.png";
 import Button from "../component/Button/Button";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
-interface BannerProps {
-  onLogin: () => void;
-  onSignup: () => void;
+function Login() {
+  return <h2>Login</h2>;
 }
 
-const Banner: React.FC<BannerProps> = ({ onLogin, onSignup }) => {
+function SignUp() {
+  return <h2>sign up</h2>;
+}
+
+export default function App() {
+  const navigate = useNavigate();
+
+  const navigateToLogin = () => {
+    navigate("/login");
+  };
+
+  const navigateToSignup = () => {
+    navigate("/signup");
+  };
+
   return (
     <div
       style={{ backgroundImage: `url(${back})` }}
@@ -20,33 +34,27 @@ const Banner: React.FC<BannerProps> = ({ onLogin, onSignup }) => {
           Connect and collaborate right next to your office
         </h1>
 
-        <div className="flex justify-center mt-6">
-          <div className="mx-6">
-            <Button clickHandler={onSignup} name="S'inscrire" color="teal" />
+        <div className="flex flex-col md:flex-row justify-center mt-6">
+          <div className="mx-6 my-3">
+            <Button
+              clickHandler={navigateToSignup}
+              name="S'inscrire"
+              color="green"
+            />
           </div>
-          <div className="mx-6">
-            <Button clickHandler={onLogin} name="Se connecter" color="black" />
-          </div>{" "}
+          <div className="mx-6 my-3">
+            <Button
+              clickHandler={navigateToLogin}
+              name="Se connecter"
+              color="black"
+            />
+          </div>
         </div>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
       </div>
     </div>
   );
-};
-
-const LandingPage: React.FC = () => {
-  const handleLogin = () => {
-    // Logique de connexion
-  };
-
-  const handleSignup = () => {
-    // Logique d'inscription
-  };
-
-  return (
-    <div>
-      <Banner onLogin={handleLogin} onSignup={handleSignup} />
-    </div>
-  );
-};
-
-export default LandingPage;
+}
