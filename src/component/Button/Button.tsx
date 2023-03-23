@@ -6,7 +6,7 @@ interface props {
   disabled: boolean;
   hide: boolean;
   name: string;
-  color: "black" | "green";
+  color: "black" | "teal";
 }
 function Button(props: props) {
   return (
@@ -17,8 +17,8 @@ function Button(props: props) {
       hidden={props.hide}
       className={
         props.color === "black"
-          ? "bg-black text-white px-6 py-1 font-roboto"
-          : "bg-teal text-black px-6 py-1"
+          ? "bg-black text-white px-6 py-1 m-1 font-roboto"
+          : "bg-teal text-black px-6 py-1 m-1"
       }
     >
       {props.name}
