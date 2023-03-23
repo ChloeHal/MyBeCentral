@@ -7,6 +7,7 @@ interface Props {
   hide: boolean;
   color: string;
   svg: JSX.Element; // nouveau prop pour le SVG
+  classname: string;
 }
 
 function RoundButton(props: Props) {
@@ -16,7 +17,11 @@ function RoundButton(props: Props) {
       type={props.type}
       disabled={props.disabled}
       hidden={props.hide}
-      className={`bg-${props.color} w-10 h-10 rounded-full flex items-center justify-center`}
+      className={`bg-${
+        props.color
+      } w-10 h-10 rounded-full flex items-center justify-center ${
+        props.classname ?? ""
+      }`}
     >
       {props.svg}
     </button>
