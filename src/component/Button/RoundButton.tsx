@@ -6,7 +6,7 @@ interface Props {
   disabled: boolean;
   hide: boolean;
   color: string;
-  svg: JSX.Element; // nouveau prop pour le SVG
+  svg: string; // nouveau prop pour le SVG
 }
 
 function RoundButton(props: Props) {
