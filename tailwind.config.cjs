@@ -14,7 +14,8 @@ module.exports = {
         teal: "#06d6a0",
         blue: "#3258A5",
         whitish: "#fcf6ee",
-        grey: "#c2bdb7",
+        grey: "#C2BDB7",
+        dark: "#000000",
       },
       fontFamily: {
         title: ["Rubik", "sans-serif"],

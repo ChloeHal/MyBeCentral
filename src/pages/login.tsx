@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Notification from "../component/Notification/Notification"; // import the Notification component
 import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
-import bg from "../content/backblue.png";
+import bg from "../content/newbackblue.png";
 
 function Login() {
   const navigateFeed = () => {
@@ -70,7 +70,7 @@ function Login() {
       style={{
         backgroundImage: `url(${bg})`,
       }}
-      className="h-screen max-w-full flex justify-center items-center flex-col bg-[center_bottom_-10rem] sm:bg-[right_bottom_-20rem] lg:bg-cover lg:bg-top bg-contain bg-no-repeat"
+      className="h-screen bg-whitish lg:bg-right bg-right-bottom max-w-full flex justify-center items-center flex-col bg-cover bg-no-repeat"
     >
       {/* <img
         src={bg}
