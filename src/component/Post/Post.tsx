@@ -15,13 +15,14 @@ interface commentsProps {
   commentPicture: string;
   commentName: string;
   commentText: string;
+  commentID: number;
 }
 interface postAcommentProps {
   yourPicture: string;
 }
 function Post(props: postProps) {
   return (
-    <section className="border border-gray-400 shadow m-4 rounded-lg ">
+    <section className="border border-gray-400 shadow m-4 sm:m-20 rounded-lg ">
       <div className="flex items-center">
         <img
           src={props.picture}
@@ -41,6 +42,7 @@ function Post(props: postProps) {
       </div>
       {props.commentsProps.map((comment) => (
         <Comments
+          key={comment.commentID}
           commentName={comment.commentName}
           commentPicture={comment.commentPicture}
           commentText={comment.commentText}
