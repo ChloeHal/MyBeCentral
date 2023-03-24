@@ -1,8 +1,8 @@
 import React from "react";
 import RoundButton from "../component/Button/RoundButton";
-import heart from "../content/heartfull.svg";
+import edit from "../content/edit.svg";
 import arrow from "../content/arrow.svg";
-import profile from "../content/profile12.png";
+import profile from "../content/profile16.jpg";
 import logo from "../content/becode.png";
 
 const handleButtonClick = () => {
@@ -13,9 +13,9 @@ const Profile: React.FC = () => {
     <div className="h-screen flex items-center justify-center relative bg-whitish">
       <RoundButton
         clickHandler={handleButtonClick}
-        classname="absolute z-50 w-16 h-16 bg-pink md:w-20 md:h-20 shadow-xl"
+        classname="absolute z-50 w-16 h-16 bg-blue md:w-20 md:h-20 shadow-xl"
         color=""
-        svg={<img src={heart} className="w-1/2 " />}
+        svg={<img src={edit} className="w-1/2 " />}
       />
       <RoundButton
         clickHandler={handleButtonClick}

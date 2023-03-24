@@ -1,8 +1,7 @@
 import React from "react";
 import RoundButton from "../component/Button/RoundButton";
-import heart from "../content/heartfull.svg";
 import arrow from "../content/arrow.svg";
-import profile from "../content/profile12.png";
+import profile from "../content/backbecode.png";
 import logo from "../content/becode.png";
 
 const handleButtonClick = () => {
@@ -11,12 +10,9 @@ const handleButtonClick = () => {
 const Profile: React.FC = () => {
   return (
     <div className="h-screen flex items-center justify-center relative bg-whitish">
-      <RoundButton
-        clickHandler={handleButtonClick}
-        classname="absolute z-50 w-16 h-16 bg-pink md:w-20 md:h-20 shadow-xl"
-        color=""
-        svg={<img src={heart} className="w-1/2 " />}
-      />
+      <div className="absolute z-50 w-20 h-20 md:w-24 md:h-24">
+        <img src={logo} className="object-cover" />
+      </div>
       <RoundButton
         clickHandler={handleButtonClick}
         classname="absolute z-50 w-12 h-12 bg-black/50 md:w-12 md:h-12 top-0 left-0 mt-4 ml-4"
@@ -29,20 +25,12 @@ const Profile: React.FC = () => {
         </div>
 
         <div className="h-1/2 flex flex-col justify-center items-center relative lg:w-1/2 lg:h-full">
-          <div className="flex flex-row my-4">
-            <p className="text-center px-4 md:text-2xl">34 followers</p>
-            <p className="text-center px-4 md:text-2xl">36 follows</p>
-          </div>
           <div className="flex flex-row my-4 mx-6 w-2/3">
-            <div className="flex py-auto w-1/3 px-4">
-              <img src={logo} className="object-cover" />
-            </div>
-            <div className="flex flex-col w-2/3 px-4 justify-center h-full md:text-xl">
-              <h1>Pépé PHP</h1>
-              <p>BeCode</p>
+            <div className="flex flex-col text-3xl w-2/3 px-4 justify-center h-full md:text-3xl">
+              <h1>BeCode</h1>
             </div>
           </div>
-          <div className="my-4 overflow-y-scroll mx-6 md:w-2/3 md:text-l">
+          <div className=" overflow-y-scroll mx-6 md:w-2/3 md:text-l">
             <p>
               Lorem ipsum dolor sit amet. Hic ipsam fugit et sunt ullam aut enim
               quis non voluptas asperiores et accusantium sint. Id accusantium

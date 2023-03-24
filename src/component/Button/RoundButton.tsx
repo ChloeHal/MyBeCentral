@@ -1,35 +1,37 @@
 import { MouseEventHandler } from "react";
 
-interface props {
+interface Props {
   clickHandler: MouseEventHandler;
   type: "submit" | "reset" | "button";
   disabled: boolean;
   hide: boolean;
-  name: string;
-  color: "black" | "teal";
+  color: string;
+  svg: JSX.Element; // nouveau prop pour le SVG
+  classname: string;
 }
-function Button(props: props) {
+
+function RoundButton(props: Props) {
   return (
     <button
       onClick={props.clickHandler}
       type={props.type}
       disabled={props.disabled}
       hidden={props.hide}
-      className={
-        props.color === "black"
-          ? "bg-black text-white px-6 py-1 m-1 font-roboto"
-          : "bg-teal text-black px-6 py-1 m-1"
-      }
+      className={`bg-${
+        props.color
+      } w-10 h-10 rounded-full flex items-center justify-center ${
+        props.classname ?? ""
+      }`}
     >
-      {props.name}
+      {props.svg}
     </button>
   );
 }
 
-Button.defaultProps = {
+RoundButton.defaultProps = {
   type: "button",
   disabled: false,
   hide: false,
 };
 
-export default Button;
+export default RoundButton;

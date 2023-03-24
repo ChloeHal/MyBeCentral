@@ -4,8 +4,18 @@ import Input from "../component/Input/Input";
 import { useNavigate } from "react-router-dom";
 import Notification from "../component/Notification/Notification"; // import the Notification component
 import { useTranslation } from "react-i18next";
+import logo from "../content/logo.png";
+import bg from "../content/backblue.png";
 
 function Login() {
+  const navigateFeed = () => {
+    // 👇️ navigate to /
+    navigate("/feed");
+  };
+  const navigateSignUp = () => {
+    // 👇️ navigate to /
+    navigate("/signup");
+  };
   const { t } = useTranslation();
   const [isNotificationVisible, setIsNotificationVisible] = useState(false);
 
@@ -56,7 +66,18 @@ function Login() {
   };
 
   return (
-    <section className="h-screen">
+    <section
+      style={{
+        backgroundImage: `url(${bg})`,
+      }}
+      className="h-screen max-w-full flex justify-center items-center flex-col bg-[center_bottom_-10rem] sm:bg-[right_bottom_-20rem] lg:bg-cover lg:bg-top bg-contain bg-no-repeat"
+    >
+      {/* <img
+        src={bg}
+        alt="soft blue green background"
+        className="absolute bottom-[0] left-10 z-[-1]"
+      /> */}
+      <img src={logo} alt="logo" className="w-44 mb-10" />
       <form onSubmit={handleSubmit} className="p-4">
         <Input
           type="text"
@@ -72,18 +93,21 @@ function Login() {
           value={loginFormData.password}
           onChange={handleInputChange}
         />
-        <div className="flex justify-around">
+        <div className="flex justify-around mt-10">
           <Button
             color="black"
             name={t("login.label")}
             type="submit"
-            clickHandler={() => console.log(loginFormData)}
+            clickHandler={navigateFeed}
           />
           <Button
-            color="green"
+            color="teal"
             name={t("signUp.label")}
-            type="submit"
-            clickHandler={() => console.log(loginFormData)}
+            type="button"
+            clickHandler={() => {
+              console.log(loginFormData);
+              navigateSignUp();
+            }}
           />
         </div>
       </form>
