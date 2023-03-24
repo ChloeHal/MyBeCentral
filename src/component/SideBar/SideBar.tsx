@@ -11,15 +11,25 @@ const Companies = [
   "BeCode",
   "Bibliothèque sans frontières",
   "Bruxelles formation",
+  "Cosearching Brussels",
+  "CodeNplay",
+  "Cool@School",
+  "CWF",
+  "eqla",
+  "EducIT",
+  "Google digitaal atelier",
+  "Hack your future",
+  "Khan Academy",
 ];
 function SideBar() {
   const { t } = useTranslation();
+  const [filter, setFilter] = useState([]);
   const [hideButton, setHideButton] = useState(false);
   const [hideSideBar, setHideSideBar] = useState(true);
   useEffect(() => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1024) {
       setHideButton(false);
-    } else if (window.innerWidth > 768) {
+    } else if (window.innerWidth > 1024) {
       setHideButton(true);
       setHideSideBar(false);
     }
@@ -40,7 +50,7 @@ function SideBar() {
         className={
           hideSideBar
             ? "hidden"
-            : "bg-black text-white md:flex md:flex-col lg:px-20 lg:py-10 p-4 "
+            : "h-[calc(100vh-48px)] bg-black text-white lg:flex lg:flex-col lg:px-20 lg:py-10 p-4 lg:fixed"
         }
       >
         <RoundButton
@@ -50,9 +60,9 @@ function SideBar() {
             setHideButton(false);
             setHideSideBar(!hideSideBar);
           }}
-          classname="md:hidden"
+          classname="lg:hidden"
         />
-        <div className="flex justify-center mb-5">
+        <div className="flex justify-center h-3/4 lg:h-full lg:flex-col mb-5 overflow-y-scroll lg:scrollbar-thin lg:scrollbar-track-black lg:scrollbar-thumb-grey">
           <section>
             <h3 className="font-title text-lg py-3">Companies</h3>
             {Companies.map((company, key) => (
@@ -63,6 +73,7 @@ function SideBar() {
             <h3 className="font-title text-lg py-3">Subjects</h3>
             <Checkbox checkboxValue={t("hiring.label")} />
             <Checkbox checkboxValue={t("internship.label")} />
+            <Checkbox checkboxValue={t("event.label")} />
           </section>
         </div>
         <Button

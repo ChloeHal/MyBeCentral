@@ -30,7 +30,7 @@ function Post(props: postProps) {
           alt="profile picture"
         />
         <div>
-          <h3>{props.name}</h3>
+          <h3 className="font-title font-bold">{props.name}</h3>
           <h4>
             {props.poste} - {props.company}
           </h4>

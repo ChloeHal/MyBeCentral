@@ -14,21 +14,22 @@ function PostAcomment(props: Props) {
     setComment(value);
   };
   return (
-    <form className="flex justify-between p-4">
+    <form className="flex justify-between p-4 pl-6">
       <img
         className="w-10 h-10 rounded-full object-cover"
         src={props.yourPicture}
         alt="Your profile picture"
       />
       <input
-        className="rounded-full border p-1 px-2 border-gray-400 sm:flex-1 sm:mx-4"
+        className="rounded-full border p-1 px-2 border-gray-400 sm:flex-1 sm:mx-4 focus:ring-pink focus:ring-2 focus:border-pink focus:outline-none focus:ring-offset-pink"
         placeholder={t("placeholder.label") as string}
+        type="text"
       ></input>
       <RoundButton
-        color="teal"
         svg={<img src={send} alt="send" className="w-1/2 translate-x-[-2px]" />}
         clickHandler={() => console.log(comment)}
-        classname=""
+        classname="bg-blue"
+        color=""
         type="submit"
       />
     </form>
