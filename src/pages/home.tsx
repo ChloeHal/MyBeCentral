@@ -3,16 +3,9 @@ import logo from "../content/logo.png";
 import back from "../content/newbackblue.png";
 import Button from "../component/Button/Button";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-function Login() {
-  return <h2>Login</h2>;
-}
-
-function SignUp() {
-  return <h2>sign up</h2>;
-}
-
-export default function App() {
+export default function Home() {
   const navigate = useNavigate();
 
   const navigateToLogin = () => {
@@ -23,6 +16,7 @@ export default function App() {
     navigate("/signup");
   };
 
+  const { t } = useTranslation();
   return (
     <div
       style={{ backgroundImage: `url(${back})` }}
@@ -31,29 +25,25 @@ export default function App() {
       <div className="text-center">
         <img src={logo} alt="Logo" className="h-48 mx-auto" />
         <h1 className="text-black text-xl font-title mt-6 mb-8">
-          Connect and collaborate right next to your office
+          {t("slogan.label")}
         </h1>
 
         <div className="flex flex-col md:flex-row justify-center mt-6">
           <div className="mx-6 my-3">
             <Button
               clickHandler={navigateToSignup}
-              name="S'inscrire"
+              name={t("signUp.label")}
               color="teal"
             />
           </div>
           <div className="mx-6 my-3">
             <Button
               clickHandler={navigateToLogin}
-              name="Se connecter"
+              name={t("login.label")}
               color="black"
             />
           </div>
         </div>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-        </Routes>
       </div>
     </div>
   );

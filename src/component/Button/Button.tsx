@@ -7,6 +7,7 @@ interface props {
   hide: boolean;
   name: string;
   color: "black" | "teal";
+  class: string;
 }
 function Button(props: props) {
   return (
@@ -17,8 +18,8 @@ function Button(props: props) {
       hidden={props.hide}
       className={
         props.color === "black"
-          ? "bg-black text-white px-6 py-1 m-1 font-roboto"
-          : "bg-teal text-black px-6 py-1 m-1"
+          ? `${props.class} bg-black text-white px-6 py-1 m-1 font-roboto`
+          : `${props.class} bg-teal text-black px-6 py-1 m-1`
       }
     >
       {props.name}
@@ -30,6 +31,7 @@ Button.defaultProps = {
   type: "button",
   disabled: false,
   hide: false,
+  class: "",
 };
 
 export default Button;
