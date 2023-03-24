@@ -39,7 +39,7 @@ export default function App() {
             <Button
               clickHandler={navigateToSignup}
               name="S'inscrire"
-              color="green"
+              color="teal"
             />
           </div>
           <div className="mx-6 my-3">
