@@ -7,13 +7,19 @@ const Navbar: React.FC = () => {
     <nav className="bg-black h-12 flex items-center p-2">
       <img className="h-7" src={Logo} alt="Logo" />
 
-      <form className="flex items-center justify-end flex-1">
-        <label className="flex items-center text-white cursor-text rounded-full border border-1 border-white bg-transparent p-1 sm:w-40 md:w-48 lg:w-96 xl:w-96 2xl:w-100">
+      <form className="flex items-center justify-end flex-1 cursor-text">
+        <div className="relative flex items-center w-11/12 sm:w-40 md:w-48 lg:w-96 xl:w-96 2xl:w-100">
           <input
-            className="place-items-stretch bg-transparent outline-none p-0.5" type="text" placeholder="Search"
+            className="bg-transparent border border-white rounded-full text-white w-full pr-10 py-1 pl-4 sm:pr-2 sm:py-2 sm:pl-10"
+            type="text"
+            placeholder="Search"
           />
-          <img className="h-4 ml-2" src={Search} alt="Search" />
-        </label>
+          <img
+            className="absolute h-4 w-4 sm:h-5 sm:w-5 right-2 top-2 sm:right-3 sm:top-3"
+            src={Search}
+            alt="Search"
+          />
+        </div>
       </form>
 
       <img
