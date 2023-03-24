@@ -4,8 +4,8 @@ import Search from "./assets/search.png";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-black h-12 flex items-center p-2">
-      <img className="h-7" src={Logo} alt="Logo" />
+    <nav className="bg-black h-16 flex items-center p-2">
+      <img className="h-7 m-3" src={Logo} alt="Logo" />
 
       <form className="flex items-center justify-end flex-1 cursor-text">
         <div className="relative flex items-center w-11/12 sm:w-40 md:w-48 lg:w-96 xl:w-96 2xl:w-100">
@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
       </form>
 
       <img
-        className="inline-block h-7 w-7 m-2 rounded-full ring-2 ring-white"
+        className="inline-block h-7 w-7 m-3 rounded-full ring-2 ring-white"
         src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
         alt="John Doe's profile"
       />
