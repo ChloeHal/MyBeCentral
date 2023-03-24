@@ -1,4 +1,6 @@
+import Navbar from "../component/navbar";
+
 function Feed() {
-  return <h1>feed</h1>;
+  return <Navbar />;
 }
 export default Feed;

@@ -63,7 +63,7 @@ const UserProfileForm = () => {
       style={{
         backgroundImage: `url(${bg})`,
       }}
-      className="h-screen w-full flex justify-center items-center flex-col bg-[center_bottom_-10rem] sm:bg-[right_bottom_-20rem] lg:bg-cover lg:bg-top bg-contain bg-no-repeat"
+      className="h-screen w-full flex justify-center bg-whitish items-center flex-col bg-[center_bottom_-10rem] sm:bg-[right_bottom_-20rem] lg:bg-cover lg:bg-top bg-contain bg-no-repeat"
     >
       {userProfile.photo ? (
         <img
