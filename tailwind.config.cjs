@@ -14,6 +14,7 @@ module.exports = {
         teal: "#06d6a0",
         blue: "#3258A5",
         whitish: "#fcf6ee",
+        grey: "#c2bdb7",
       },
       fontFamily: {
         title: ["Rubik", "sans-serif"],
@@ -21,5 +22,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };
