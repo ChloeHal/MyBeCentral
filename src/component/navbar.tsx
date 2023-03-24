@@ -1,6 +1,6 @@
 import React from "react";
-import Logo from "./assets/logo.png";
-import Search from "./assets/search.png";
+import Logo from "../content/logowhite.svg";
+import Search from "../content/search.svg";
 
 const Navbar: React.FC = () => {
   return (

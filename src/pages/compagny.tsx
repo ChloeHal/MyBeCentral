@@ -3,6 +3,7 @@ import RoundButton from "../component/Button/RoundButton";
 import arrow from "../content/arrow.svg";
 import profile from "../content/backbecode.png";
 import logo from "../content/becode.png";
+import back from "../content/newbackblue.png";
 
 const handleButtonClick = () => {
   console.log("Button clicked!");
@@ -24,7 +25,10 @@ const Profile: React.FC = () => {
           <img src={profile} className="w-full h-full object-cover" />
         </div>
 
-        <div className="h-1/2 flex flex-col justify-center items-center relative lg:w-1/2 lg:h-full">
+        <div
+          style={{ backgroundImage: `url(${back})` }}
+          className="h-1/2 flex flex-col justify-center bg-center bg-cover items-center relative lg:w-1/2 lg:h-full"
+        >
           <div className="flex flex-row my-4 mx-6 w-2/3">
             <div className="flex flex-col text-3xl w-2/3 px-4 justify-center h-full md:text-3xl">
               <h1>BeCode</h1>

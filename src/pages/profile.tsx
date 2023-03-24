@@ -4,6 +4,7 @@ import heart from "../content/heartfull.svg";
 import arrow from "../content/arrow.svg";
 import profile from "../content/profile12.png";
 import logo from "../content/becode.png";
+import back from "../content/newbackblue.png";
 
 const handleButtonClick = () => {
   console.log("Button clicked!");
@@ -28,7 +29,10 @@ const Profile: React.FC = () => {
           <img src={profile} className="w-full h-full object-cover" />
         </div>
 
-        <div className="h-1/2 flex flex-col justify-center items-center relative lg:w-1/2 lg:h-full">
+        <div
+          style={{ backgroundImage: `url(${back})` }}
+          className="h-1/2 flex flex-col bg-center bg-cover justify-center items-center relative lg:w-1/2 lg:h-full"
+        >
           <div className="flex flex-row my-4">
             <p className="text-center px-4 md:text-2xl">34 followers</p>
             <p className="text-center px-4 md:text-2xl">36 follows</p>
