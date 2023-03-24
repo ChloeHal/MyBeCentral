@@ -23,6 +23,7 @@ select:-webkit-autofill:focus {
 }
 input:checked + div {
   border: solid #06d6a0 2px;
+  background-color: white;
 }
 input:checked + div svg {
   display: block;
