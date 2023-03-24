@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Post from "../component/Post/Post";
 import profile from "../content/profile.png";
 import SideBar from "../component/SideBar/SideBar";
@@ -33,5 +34,11 @@ function Feed() {
       />
     </div>
   );
+=======
+import Navbar from "../component/navbar";
+
+function Feed() {
+  return <Navbar />;
+>>>>>>> a247925c801d06c8ae8bcd8c9fae00ca8b5d542d
 }
 export default Feed;

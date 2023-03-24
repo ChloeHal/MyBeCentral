@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../content/logo.png";
-import back from "../content/backblue.png";
+import back from "../content/newbackblue.png";
 import Button from "../component/Button/Button";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div
       style={{ backgroundImage: `url(${back})` }}
-      className="bg-amber-50 flex items-center justify-center h-screen"
+      className="h-screen bg-whitish lg:bg-right bg-right-bottom max-w-full flex justify-center items-center flex-col bg-cover bg-no-repeat"
     >
       <div className="text-center">
         <img src={logo} alt="Logo" className="h-48 mx-auto" />
