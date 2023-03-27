@@ -1,16 +1,15 @@
 import React from "react";
-<<<<<<<< HEAD:src/component/Navbar/navbar.tsx
-import Logo from "../../assets/logo.png";
-import Search from "../../assets/search.png";
-========
-import Logo from "../content/logowhite.svg";
-import Search from "../content/search.svg";
->>>>>>>> development:src/component/navbar.tsx
+import Logo from "../../content/logowhite.svg";
+import Search from "../../content/search.svg";
 
 const Navbar: React.FC = () => {
   return (
     <nav className="bg-black h-12 flex items-center p-2">
-      <img className="h-7 m-2 lg:h-8 lg:m-3 xl:h-9 xl:m-4 2xl:h-9 2xl:m-5" src={Logo} alt="Logo" />
+      <img
+        className="h-7 m-2 lg:h-8 lg:m-3 xl:h-9 xl:m-4 2xl:h-9 2xl:m-5"
+        src={Logo}
+        alt="Logo"
+      />
 
       <form className="flex items-center justify-end flex-1 cursor-text">
         <div className="relative flex items-center w-11/12 sm:w-40 md:w-48 lg:w-96 xl:w-96 2xl:w-100">

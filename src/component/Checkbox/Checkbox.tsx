@@ -1,5 +1,9 @@
+import { ChangeEvent, ChangeEventHandler } from "react";
+
 interface Props {
   checkboxValue: string;
+  checked: boolean;
+  onChange: ChangeEventHandler;
 }
 function Checkbox(props: Props) {
   return (
@@ -10,6 +14,8 @@ function Checkbox(props: Props) {
         className="opacity-0 absolute h-8 w-8"
         value={props.checkboxValue}
         name="filter"
+        checked={props.checked}
+        onChange={props.onChange}
       />
       <div className="bg-transparent border rounded-md border-white w-8 h-8 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-white ">
         <svg
@@ -33,4 +39,8 @@ function Checkbox(props: Props) {
     </div>
   );
 }
+Checkbox.defaultProps = {
+  checked: false,
+};
+
 export default Checkbox;
