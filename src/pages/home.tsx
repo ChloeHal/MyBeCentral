@@ -20,11 +20,11 @@ export default function Home() {
   return (
     <div
       style={{ backgroundImage: `url(${back})` }}
-      className="h-screen bg-whitish lg:bg-right bg-right-bottom max-w-full flex justify-center items-center flex-col bg-cover bg-no-repeat"
+      className="h-screen bg-whitish dark:bg-dark dark:text-whitish lg:bg-right bg-right-bottom max-w-full flex justify-center items-center flex-col bg-cover bg-no-repeat"
     >
       <div className="text-center">
-        <img src={logo} alt="Logo" className="h-48 mx-auto" />
-        <h1 className="text-black text-xl font-title mt-6 mb-8">
+        <img src={logo} alt="Logo" className="h-48 mx-auto dark:invert" />
+        <h1 className="text-black text-xl font-title mt-6 mb-8 dark:text-whitish">
           {t("slogan.label")}
         </h1>
 

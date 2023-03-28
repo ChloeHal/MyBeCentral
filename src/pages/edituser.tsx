@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Input from "../component/Input/Input";
 import Button from "../component/Button/Button";
-import bg from "../content/backblue.png";
+import bg from "../content/newbackblue.png";
 import logo from "../content/logoblack.png";
 
 type UserProfile = {
@@ -63,7 +63,7 @@ const UserProfileForm = () => {
       style={{
         backgroundImage: `url(${bg})`,
       }}
-      className="h-screen w-full flex justify-center bg-whitish items-center flex-col bg-[center_bottom_-10rem] sm:bg-[right_bottom_-20rem] lg:bg-cover lg:bg-top bg-contain bg-no-repeat"
+      className="h-screen bg-whitish dark:bg-dark dark:text-whitish lg:bg-right bg-right-bottom max-w-full flex justify-center items-center flex-col bg-cover bg-no-repeat"
     >
       {userProfile.photo ? (
         <img
@@ -105,7 +105,7 @@ const UserProfileForm = () => {
             name="company"
             value={userProfile.company}
             onChange={handleInputChange}
-            className="block w-full px-3 py-2 text-sm text-black bg-transparent border border-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            className="block w-full px-3 py-2 text-sm text-black bg-transparent border border-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm dark:border-whitish dark:text-whitish"
           >
             <option value="">Sélectionnez une entreprise</option>
             <option value="entreprise1">Entreprise 1</option>
@@ -118,7 +118,7 @@ const UserProfileForm = () => {
             id="photo"
             type="file"
             accept="image/*"
-            className="block py-2 px-0 mb-6 w-full text-sm text-black bg-transparent border-0 border-b border-black appearance-none "
+            className="block py-2 px-0 mb-6 w-full text-sm text-black bg-transparent border-0 border-b border-black appearance-none dark:text-whitish dark:border-whitish"
             onChange={handlePhotoChange}
           />
 

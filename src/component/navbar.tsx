@@ -1,7 +1,7 @@
 import React from "react";
-
 import Logo from "../content/logowhite.svg";
 import Search from "../content/search.svg";
+import profile from "../content/profile12.png";
 
 const Navbar: React.FC = () => {
   return (
@@ -28,8 +28,8 @@ const Navbar: React.FC = () => {
       </form>
 
       <img
-        className="inline-block h-9 w-9 m-2 lg:m-3 xl:m-4 2xl:m-5 rounded-full ring-2 ring-white"
-        src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+        className="inline-block h-9 w-9 m-2 lg:m-3 xl:m-4 2xl:m-5 rounded-full ring-2 ring-whitish"
+        src={profile}
         alt="John Doe's profile"
       />
     </nav>
