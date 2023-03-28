@@ -1,6 +1,7 @@
 import Navbar from "../navbar";
+import Popup from "../alert"
 
 function Feed() {
-  return <Navbar/>;
+  return <Popup/>;
 }
 export default Feed;
