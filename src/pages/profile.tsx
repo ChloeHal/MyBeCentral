@@ -5,25 +5,32 @@ import arrow from "../content/arrow.svg";
 import profile from "../content/profile12.png";
 import logo from "../content/becode.png";
 import back from "../content/newbackblue.png";
+import { useNavigate } from "react-router-dom";
 
-const handleButtonClick = () => {
-  console.log("Button clicked!");
-};
 const Profile: React.FC = () => {
+  const navigate = useNavigate();
+  // Navigate to the feed page
+  const navigateFeed = () => {
+    navigate("/feed");
+  };
+  const handleButtonClick = () => {
+    console.log("Button clicked!");
+  };
   return (
-    <div className="h-screen flex items-center justify-center relative bg-whitish">
+    <div className="h-screen flex items-center justify-center relative bg-whitish dark:bg-dark dark:text-whitish">
       <RoundButton
         clickHandler={handleButtonClick}
         classname="absolute z-50 w-16 h-16 bg-pink md:w-20 md:h-20 shadow-xl"
         color=""
-        svg={<img src={heart} className="w-1/2 " />}
+        svg={<img src={heart} className="w-1/2 dark:invert" />}
       />
       <RoundButton
-        clickHandler={handleButtonClick}
+        clickHandler={navigateFeed}
         classname="absolute z-50 w-12 h-12 bg-black/50 md:w-12 md:h-12 top-0 left-0 mt-4 ml-4"
         color=""
         svg={<img src={arrow} className="h-1/2 " />}
       />
+
       <div className="flex flex-col h-screen lg:flex-row">
         <div className="h-1/2 relative lg:h-full lg:w-1/2 shadow-2xl ">
           <img src={profile} className="w-full h-full object-cover" />

@@ -75,9 +75,9 @@ function SignUp() {
       style={{
         backgroundImage: `url(${bg})`,
       }}
-      className="h-screen bg-whitish lg:bg-right bg-right-bottom max-w-full flex justify-center items-center flex-col bg-cover bg-no-repeat"
+      className="h-screen bg-whitish dark:bg-dark dark:text-whitish lg:bg-right bg-right-bottom max-w-full flex justify-center items-center flex-col bg-cover bg-no-repeat"
     >
-      <img src={logo} alt="logo" className="w-28" />
+      <img src={logo} alt="logo" className="w-28 dark:invert" />
       <form onSubmit={handleSubmit} className="p-4">
         <Input
           type="text"
