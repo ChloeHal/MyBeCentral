@@ -49,5 +49,30 @@ const posts = {
       },
     ],
   },
+  3: {
+    id: 3,
+    name: "Jack Doe",
+    picture: "src/content/profile.png",
+    poste: "Touriste",
+    company: "19",
+    texte:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie felis quis purus maximus euismod. Vivamus diam nibh, tempor in dictum a, pretium vitae augue.",
+    ashtag: ["#station", "#starbucks"],
+    subject: "Stage",
+    comments: [
+      {
+        commentName: "John Doe",
+        commentPicture: "src/content/profile1.png",
+        commentText: "Hello world",
+        commentID: 1,
+      },
+      {
+        commentName: "Jane Doe",
+        commentPicture: "src/content/profile2.png",
+        commentText: "Hi everyone!",
+        commentID: 2,
+      },
+    ],
+  },
 };
 export default posts;

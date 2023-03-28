@@ -5,29 +5,9 @@ import RoundButton from "../Button/RoundButton";
 import arrow from "../../content/arrow.svg";
 import Checkbox from "../Checkbox/Checkbox";
 import { Filters } from "../../assets/interface/Filters";
-const Companies = [
-  "19",
-  "Alter Educs",
-  "Be education",
-  "BeCode",
-  "Bibliothèque sans frontières",
-  "Bruxelles formation",
-  "Cosearching Brussels",
-  "CodeNplay",
-  "Cool@School",
-  "CWF",
-  "eqla",
-  "EducIT",
-  "Google digitaal atelier",
-  "Hack your future",
-  "Khan Academy",
-];
 
 type FilterValue = {
   [key: string]: boolean;
-  hiring: boolean;
-  internship: boolean;
-  event: boolean;
 };
 interface Props {
   onChange: (value: Filters) => void;
@@ -35,6 +15,24 @@ interface Props {
 
 function SideBar(props: Props) {
   const { t } = useTranslation();
+  const Companies = [
+    "19",
+    "Alter Educs",
+    "Be education",
+    "BeCode",
+    "Bibliothèque sans frontières",
+    "Bruxelles formation",
+    "Cosearching Brussels",
+    "CodeNplay",
+    "Cool@School",
+    "CWF",
+    "eqla",
+    "EducIT",
+    "Google digitaal atelier",
+    "Hack your future",
+    "Khan Academy",
+  ];
+  const subjects = [t("hiring.label"), t("internship.label"), t("event.label")];
   const { onChange } = props;
   const [filter, setFilter] = useState<Filters>({});
 
@@ -43,9 +41,9 @@ function SideBar(props: Props) {
     Companies.forEach((company) => {
       initialFilters[company] = false;
     });
-    initialFilters.hiring = false;
-    initialFilters.internship = false;
-    initialFilters.event = false;
+    subjects.forEach((subject) => {
+      initialFilters[subject] = false;
+    });
     setFilter(initialFilters);
   }, []);
 
@@ -105,7 +103,7 @@ function SideBar(props: Props) {
           classname="lg:hidden"
         />
         <div className="flex justify-center h-3/4 lg:h-full lg:flex-col mb-5 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-grey">
-          <section>
+          <section className="lg:mt-40">
             <h3 className="font-title text-lg py-3">Companies</h3>
             {Companies.map((company, key) => (
               <Checkbox
@@ -121,17 +119,17 @@ function SideBar(props: Props) {
             <Checkbox
               checkboxValue={t("hiring.label")}
               onChange={handleCheckboxInputChange}
-              checked={filter.hiring}
+              checked={filter[t("hiring.label")]}
             />
             <Checkbox
               checkboxValue={t("internship.label")}
               onChange={handleCheckboxInputChange}
-              checked={filter.internship}
+              checked={filter[t("internship.label")]}
             />
             <Checkbox
-              checkboxValue="Event"
+              checkboxValue={t("event.label")}
               onChange={handleCheckboxInputChange}
-              checked={filter.event}
+              checked={filter[t("event.label")]}
             />
           </section>
         </div>

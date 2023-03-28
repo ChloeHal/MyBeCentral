@@ -2,29 +2,50 @@ import RoundButton from "../Button/RoundButton";
 import send from "../../content/send.svg";
 import { ChangeEvent, useState } from "react";
 import { useTranslation } from "react-i18next";
+import posts from "../../assets/backend/posts";
 
 interface Props {
   yourPicture: string;
+  commentID: number;
 }
 
 function PostAcomment(props: Props) {
   const { t } = useTranslation();
 
   const [comment, setComment] = useState("");
-
+  function generateUniqueId(): string {
+    const timestamp: number = Date.now();
+    const random: number = Math.random() * Math.pow(10, 17);
+    const uniqueId: string = `${timestamp}${random.toString().substr(0, 12)}`;
+    return uniqueId;
+  }
   const handleComment = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
 
     const value = event.target.value;
 
     setComment(value);
+  };
+  const postComment: React.MouseEventHandler<Element> = (event) => {
+    event.preventDefault();
+    console.log(comment, props.commentID);
+    //ici il faudra ajouter dans l'array avec les autres comments et le post ds la DB
+    handleCommentSubmit(props.commentID, comment);
+  };
+  function handleCommentSubmit(postId: number, commentText: string) {
+    const comment = {
+      id: generateUniqueId(),
+      text: commentText,
+    };
 
-    console.log(comment);
-  };
-  const postComment = () => {
-    console.log(comment);
-    //ici il faudra ajouter dans l'array avec les autres comments et du coup il sera visible
-  };
+    // Find the post with the matching id and add the comment
+    const updatedPosts = Object.values(posts).map((post) => {
+      if (post.id === postId) {
+        return { ...post, comments: [...post.comments, comment] };
+      }
+      return post;
+    });
+  }
   return (
     <form className="flex justify-between p-4 pl-6">
       <img
@@ -37,6 +58,7 @@ function PostAcomment(props: Props) {
         placeholder={t("placeholder.label") as string}
         type="text"
         onChange={handleComment}
+        name="newComment"
       />
       <RoundButton
         svg={<img src={send} alt="send" className="w-1/2 translate-x-[-2px]" />}
