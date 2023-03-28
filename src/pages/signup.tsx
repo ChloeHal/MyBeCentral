@@ -18,12 +18,6 @@ function SignUp() {
   };
   const { t } = useTranslation();
   const [isNotificationVisible, setIsNotificationVisible] = useState(false);
-
-  const toggleNotification = () => {
-    setIsNotificationVisible(
-      (prevIsNotificationVisible) => !prevIsNotificationVisible
-    );
-  };
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loginFormData, setLoginFormData] = useState({
@@ -173,13 +167,11 @@ function SignUp() {
         </div>
       </form>
 
-      <Notification
-        title="Error"
-        isOpen={false}
-        toggleNotification={toggleNotification}
-      >
-        {errorMessage}
-      </Notification>
+      {isNotificationVisible ? (
+        <Notification title="Error" text={errorMessage} />
+      ) : (
+        <></>
+      )}
     </section>
   );
 }
