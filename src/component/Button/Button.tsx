@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import { ChangeEvent, MouseEventHandler } from "react";
 
 interface props {
   clickHandler: MouseEventHandler;

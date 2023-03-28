@@ -3,6 +3,8 @@ import Logo from "../../content/logowhite.svg";
 import Search from "../../content/search.svg";
 import profile from "../../content/profile12.png";
 import Toggle from "../../component/Dark/Dark";
+
+
 const Navbar: React.FC = () => {
   return (
     <nav className="bg-black h-12 flex items-center p-2">
@@ -12,6 +14,7 @@ const Navbar: React.FC = () => {
         alt="Logo"
       />
       <Toggle />
+
       <form className="flex items-center justify-end flex-1 cursor-text">
         <div className="relative flex items-center w-11/12 sm:w-40 md:w-48 lg:w-96 xl:w-96 2xl:w-100">
           <input
