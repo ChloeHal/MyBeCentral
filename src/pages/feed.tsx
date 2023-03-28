@@ -2,52 +2,122 @@ import Post from "../component/Post/Post";
 import profile from "../content/profile.png";
 import SideBar from "../component/SideBar/SideBar";
 import Navbar from "../component/Navbar/navbar";
-const commentsProps = [
-  {
-    commentName: "John Doe",
-    commentPicture: "src/content/profile1.png",
-    commentText: "Hello baby",
-    commentID: 1,
-  },
-  {
-    commentName: "Jane Doe",
-    commentPicture: "src/content/profile2.png",
-    commentText: "Hi there!",
-    commentID: 2,
-  },
-];
+import { useState, useEffect } from "react";
+import posts from "../assets/backend/posts";
+import { Filters } from "../assets/interface/Filters";
+import Notification from "../component/Notification/Notification";
+
 function Feed() {
+  const [filter, setFilter] = useState<Filters>({});
+  const [noPost, setNoPost] = useState(false);
+  const handleFilterChange = (newFilter: Filters) => {
+    setFilter(newFilter);
+    setNoPost(false);
+  };
+  const matchingAllFilters = Object.values(posts).filter((post) => {
+    const selectedCompanies = Object.keys(filter).filter(
+      (company) => filter[company]
+    );
+    return selectedCompanies.every((company) => post.company.includes(company));
+  });
+  const matchingSomeFilters = Object.values(posts).filter((post) => {
+    const selectedCompanies = Object.keys(filter).filter(
+      (company) => filter[company]
+    );
+    return (
+      selectedCompanies.length === 0 ||
+      selectedCompanies.some((company) => post.company.includes(company))
+    );
+  });
+
+  useEffect(() => {
+    if (
+      Object.keys(filter).some((company) => filter[company]) &&
+      matchingAllFilters.length === 0
+    ) {
+      setNoPost(true);
+    } else {
+      setNoPost(false);
+    }
+  }, [filter, matchingAllFilters]);
+
+  const hasFilteredPosts = matchingAllFilters.length > 0;
+  const noPostsFilter = Object.entries(filter)
+    .filter(
+      ([key, value]) =>
+        value && !matchingSomeFilters.some((post) => post.company.includes(key))
+    )
+    .map(([key]) => key)
+    .join(", ");
+  console.log(
+    Object.entries(filter),
+    matchingSomeFilters.map((filter) => filter.company)
+  );
   return (
     <>
       <Navbar />
       <div className="md:flex md:justify-start md:items-start">
-        <SideBar />
-        <div className="lg:ml-[451.25px]">
-          <Post
-            name="Jane Doe"
-            picture={profile}
-            poste="Etudiante"
-            company="BeCode"
-            texte="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie
-        felis quis purus maximus euismod. Vivamus diam nibh, tempor in dictum a,
-        pretium vitae augue."
-            ashtag={["#study", "#skribble"]}
-            commentsProps={commentsProps}
-            postAcommentProps={profile}
-          />
-          <Post
-            name="Jane Doe"
-            picture={profile}
-            poste="Etudiante"
-            company="BeCode"
-            texte="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie
-        felis quis purus maximus euismod. Vivamus diam nibh, tempor in dictum a,
-        pretium vitae augue."
-            ashtag={["#study", "#skribble"]}
-            commentsProps={commentsProps}
-            postAcommentProps={profile}
-          />
-        </div>
+        <SideBar onChange={handleFilterChange} />
+        {hasFilteredPosts ? (
+          <div className="lg:ml-[451.25px]">
+            {matchingAllFilters.map((post) => (
+              <Post
+                key={post.id}
+                name={post.name}
+                picture={post.picture}
+                poste={post.poste}
+                company={post.company}
+                texte={post.texte}
+                ashtag={post.ashtag}
+                commentsProps={post.comments}
+                postAcommentProps={post.picture}
+              />
+            ))}
+          </div>
+        ) : matchingSomeFilters.length === 0 ? (
+          <div className="lg:ml-[451.25px]">
+            {" "}
+            {Object.values(posts).map((post) => (
+              <Post
+                key={post.id}
+                name={post.name}
+                picture={post.picture}
+                poste={post.poste}
+                company={post.company}
+                texte={post.texte}
+                ashtag={post.ashtag}
+                commentsProps={post.comments}
+                postAcommentProps={post.picture}
+              />
+            ))}
+            <Notification
+              text={`Sorry, there are no posts for ${noPostsFilter}`}
+              title="Oops"
+            />
+          </div>
+        ) : (
+          <div className="lg:ml-[451.25px]">
+            {matchingSomeFilters.map((post) => (
+              <Post
+                key={post.id}
+                name={post.name}
+                picture={post.picture}
+                poste={post.poste}
+                company={post.company}
+                texte={post.texte}
+                ashtag={post.ashtag}
+                commentsProps={post.comments}
+                postAcommentProps={post.picture}
+              />
+            ))}
+            {noPost && matchingSomeFilters.length > 0 && (
+              <Notification
+                text={`Sorry, there are no posts for ${noPostsFilter}`}
+                title="Oops"
+              />
+            )}
+          </div>
+        )}
       </div>
     </>
   );

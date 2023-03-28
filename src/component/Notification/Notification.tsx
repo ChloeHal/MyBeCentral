@@ -1,49 +1,41 @@
-import { MouseEventHandler, useEffect } from "react";
+import { MouseEventHandler, useState } from "react";
 interface props {
-  toggleNotification: MouseEventHandler;
   title: string;
-  children: JSX.Element | string;
-  isOpen: boolean;
+  text: JSX.Element | string;
 }
 function Notification(props: props) {
-  if (!props.isOpen) {
-    document.body.classList.remove("notif-open");
-    return null;
-  }
-  useEffect(() => {
-    if (props.isOpen) {
-      document.body.classList.add("notif-open");
-    }
-    return () => {
-      document.body.classList.remove("notif-open");
-    };
-  }, [props.isOpen]);
+  let [isOpen, setIsOpen] = useState(true);
+
   return (
-    <div className="bg-white text-black fixed top-0 right-0 z-50 m-4 rounded-xl shadow-lg md:w-1/2 lg:w-1/4">
-      <button
-        className="fixed top-5 right-5  p-2"
-        onClick={props.toggleNotification}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-8 h-8 md:h-10 md:w-10"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      </button>
-      <div className="text-left p-4 w-full h-full md:mx-auto">
-        <h3 className=" font-title text-xl">{props.title}</h3>
-        {props.children}
+    <dialog className="relative z-50" open={isOpen}>
+      <div className="fixed inset-0 flex items-start justify-end m-4">
+        <div className="w-full max-w-sm rounded p-4 bg-grey flex flex-col">
+          <button
+            className="fixed top-5 right-5  p-2"
+            onClick={() => setIsOpen(false)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-8 h-8 md:h-10 md:w-10"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </button>
+          <div className="text-left p-4 w-full h-full md:mx-auto">
+            <h3 className=" font-title text-xl">{props.title}</h3>
+            {props.text}
+          </div>
+        </div>
       </div>
-    </div>
+    </dialog>
   );
 }
 export default Notification;
