@@ -4,7 +4,7 @@ import Search from "./assets/search.png";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-black h-12 flex items-center p-2">
+    <nav className="bg-black h-12 flex items-center p-2 fixed top-0 w-full">
       <img className="h-7 m-2 lg:h-8 lg:m-3 xl:h-9 xl:m-4 2xl:h-9 2xl:m-5" src={Logo} alt="Logo" />
 
       <form className="flex items-center justify-end flex-1 cursor-text">
