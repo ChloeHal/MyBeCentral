@@ -9,11 +9,9 @@ import bg from "../content/newbackblue.png";
 
 function Login() {
   const navigateFeed = () => {
-    // 👇️ navigate to /
     navigate("/feed");
   };
   const navigateSignUp = () => {
-    // 👇️ navigate to /
     navigate("/signup");
   };
   const { t } = useTranslation();
@@ -72,11 +70,6 @@ function Login() {
       }}
       className="h-screen bg-whitish lg:bg-right bg-right-bottom max-w-full flex justify-center items-center flex-col bg-cover bg-no-repeat"
     >
-      {/* <img
-        src={bg}
-        alt="soft blue green background"
-        className="absolute bottom-[0] left-10 z-[-1]"
-      /> */}
       <img src={logo} alt="logo" className="w-44 mb-10" />
       <form onSubmit={handleSubmit} className="p-4">
         <Input
@@ -112,13 +105,11 @@ function Login() {
         </div>
       </form>
 
-      <Notification
-        title="Error"
-        isOpen={false}
-        toggleNotification={toggleNotification}
-      >
-        {errorMessage}
-      </Notification>
+      {isNotificationVisible ? (
+        <Notification title="Error" text={errorMessage} />
+      ) : (
+        <></>
+      )}
     </section>
   );
 }

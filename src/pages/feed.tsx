@@ -77,6 +77,7 @@ function Feed() {
           <div className="lg:ml-[451.25px]">
             {matchingAllFilters.map((post) => (
               <Post
+                id={post.id}
                 key={post.id}
                 name={post.name}
                 picture={post.picture}
@@ -94,6 +95,7 @@ function Feed() {
             {" "}
             {Object.values(posts).map((post) => (
               <Post
+                id={post.id}
                 key={post.id}
                 name={post.name}
                 picture={post.picture}
@@ -114,6 +116,7 @@ function Feed() {
           <div className="lg:ml-[451.25px]">
             {matchingSomeFilters.map((post) => (
               <Post
+                id={post.id}
                 key={post.id}
                 name={post.name}
                 picture={post.picture}

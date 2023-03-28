@@ -2,6 +2,7 @@ import profile from "../../content/profile.jpg";
 import Comments from "../Comments/Comments";
 import PostAcomment from "../Comments/PostAcomment";
 interface postProps {
+  id: number;
   name: string;
   picture: string;
   poste: string;
@@ -48,7 +49,10 @@ function Post(props: postProps) {
           commentText={comment.commentText}
         />
       ))}
-      <PostAcomment yourPicture={props.postAcommentProps} />
+      <PostAcomment
+        yourPicture={props.postAcommentProps}
+        commentID={props.id}
+      />
     </section>
   );
 }
