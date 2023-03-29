@@ -103,7 +103,7 @@ function SideBar(props: Props) {
           classname="lg:hidden"
         />
         <div className="flex justify-center h-3/4 lg:h-full lg:flex-col mb-5 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-grey">
-          <section className="lg:mt-40">
+          <section className="lg:mt-60">
             <h3 className="font-title text-lg py-3">Companies</h3>
             {Companies.map((company, key) => (
               <Checkbox

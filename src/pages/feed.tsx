@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import posts from "../assets/backend/posts";
 import { Filters } from "../assets/interface/Filters";
 import Notification from "../component/Notification/Notification";
+import MessageInput from "../component/Post/MessageInput";
 
 function Feed() {
   const [filter, setFilter] = useState<Filters>({});
@@ -75,6 +76,11 @@ function Feed() {
         <SideBar onChange={handleFilterChange} />
         {hasFilteredPosts ? (
           <div className="lg:ml-[451.25px]">
+            <MessageInput
+              onSubmit={(message) => {
+                console.log(message);
+              }}
+            />
             {matchingAllFilters.map((post) => (
               <Post
                 id={post.id}
@@ -92,7 +98,11 @@ function Feed() {
           </div>
         ) : matchingSomeFilters.length === 0 ? (
           <div className="lg:ml-[451.25px]">
-            {" "}
+            <MessageInput
+              onSubmit={(message) => {
+                console.log(message);
+              }}
+            />
             {Object.values(posts).map((post) => (
               <Post
                 id={post.id}
@@ -114,6 +124,11 @@ function Feed() {
           </div>
         ) : (
           <div className="lg:ml-[451.25px]">
+            <MessageInput
+              onSubmit={(message) => {
+                console.log(message);
+              }}
+            />
             {matchingSomeFilters.map((post) => (
               <Post
                 id={post.id}
