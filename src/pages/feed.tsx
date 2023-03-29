@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import posts from "../assets/backend/posts";
 import { Filters } from "../assets/interface/Filters";
 import Notification from "../component/Notification/Notification";
+import MessageInput from "../component/Post/MessageInput";
 
 function Feed() {
   const [filter, setFilter] = useState<Filters>({});
@@ -17,22 +18,35 @@ function Feed() {
     const selectedCompanies = Object.keys(filter).filter(
       (company) => filter[company]
     );
-    return selectedCompanies.every((company) => post.company.includes(company));
+    const selectedSubjects = Object.keys(filter).filter(
+      (subject) => filter[subject]
+    );
+    return (
+      selectedCompanies.every((company) => post.company.includes(company)) &&
+      selectedSubjects.every((subject) => post.subject.includes(subject))
+    );
   });
+
   const matchingSomeFilters = Object.values(posts).filter((post) => {
     const selectedCompanies = Object.keys(filter).filter(
       (company) => filter[company]
     );
+    const selectedSubjects = Object.keys(filter).filter(
+      (subject) => filter[subject]
+    );
     return (
       selectedCompanies.length === 0 ||
-      selectedCompanies.some((company) => post.company.includes(company))
+      selectedCompanies.some((company) => post.company.includes(company)) ||
+      selectedSubjects.some((subject) => post.subject.includes(subject))
     );
   });
 
   useEffect(() => {
     if (
       Object.keys(filter).some((company) => filter[company]) &&
-      matchingAllFilters.length === 0
+      matchingAllFilters.length === 0 &&
+      matchingSomeFilters.length <
+        Object.values(filter).filter((value) => value === true).length
     ) {
       setNoPost(true);
     } else {
@@ -44,13 +58,15 @@ function Feed() {
   const noPostsFilter = Object.entries(filter)
     .filter(
       ([key, value]) =>
-        value && !matchingSomeFilters.some((post) => post.company.includes(key))
+        value &&
+        !matchingSomeFilters.some((post) => post.company.includes(key)) &&
+        !matchingSomeFilters.some((post) => post.subject.includes(key))
     )
     .map(([key]) => key)
     .join(", ");
   console.log(
-    Object.entries(filter),
-    matchingSomeFilters.map((filter) => filter.company)
+    matchingSomeFilters.length,
+    Object.values(filter).filter((value) => value === true).length
   );
   return (
     <>
@@ -59,8 +75,14 @@ function Feed() {
         <SideBar onChange={handleFilterChange} />
         {hasFilteredPosts ? (
           <div className="lg:ml-[451.25px]">
+            <MessageInput
+              onSubmit={(message) => {
+                console.log(message);
+              }}
+            />
             {matchingAllFilters.map((post) => (
               <Post
+                id={post.id}
                 key={post.id}
                 name={post.name}
                 picture={post.picture}
@@ -75,9 +97,14 @@ function Feed() {
           </div>
         ) : matchingSomeFilters.length === 0 ? (
           <div className="lg:ml-[451.25px]">
-            {" "}
+            <MessageInput
+              onSubmit={(message) => {
+                console.log(message);
+              }}
+            />
             {Object.values(posts).map((post) => (
               <Post
+                id={post.id}
                 key={post.id}
                 name={post.name}
                 picture={post.picture}
@@ -96,8 +123,14 @@ function Feed() {
           </div>
         ) : (
           <div className="lg:ml-[451.25px]">
+            <MessageInput
+              onSubmit={(message) => {
+                console.log(message);
+              }}
+            />
             {matchingSomeFilters.map((post) => (
               <Post
+                id={post.id}
                 key={post.id}
                 name={post.name}
                 picture={post.picture}

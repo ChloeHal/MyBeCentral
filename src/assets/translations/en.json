@@ -11,9 +11,13 @@
   "follows.label": "follows",
   "filter.label": "filter",
   "search.label": "search",
-  "placeholder.label": "Something to say?",
+  "placeholder.label": "Anything to share?",
   "validate.label": "Validate",
   "hiring.label": "Hiring",
   "internship.label": "Internship",
-  "event.lablel": "Event"
+  "event.label": "Event",
+  "post.label": "What is it about?",
+  "postplaceholder.label": "Tell us everything...",
+  "send.label": "Send",
+  "cancel.label": "Cancel"
 }

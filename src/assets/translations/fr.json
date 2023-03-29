@@ -15,5 +15,9 @@
   "validate.label": "Valider",
   "hiring.label": "Embauche",
   "internship.label": "Stage",
-  "event.label": "Evenement"
+  "event.label": "Evenement",
+  "post.label": "Quel est le sujet?",
+  "postplaceholder.label": "Dites nous tout...",
+  "send.label": "Envoyer",
+  "cancel.label": "Annuler"
 }
