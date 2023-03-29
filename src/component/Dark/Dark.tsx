@@ -11,12 +11,12 @@ export default function Example() {
     setEnabled(!enabled);
   };
   return (
-    <div className="py-16">
+    <div className="py-4">
       <Switch
         checked={enabled}
         onChange={handleDarkMode}
         className={`${
-          enabled ? "bg-teal" : "bg-pink"
+          enabled ? "bg-teal" : "bg-blue"
         } relative inline-flex h-[38px] w-[74px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
       >
         <span className="sr-only">Use setting</span>
