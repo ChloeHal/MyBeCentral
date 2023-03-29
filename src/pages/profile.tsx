@@ -53,7 +53,7 @@ const Profile: React.FC = () => {
               <p>BeCode</p>
             </div>
           </div>
-          <div className="my-4 overflow-y-scroll mx-6 md:w-2/3 md:text-l">
+          <div className="my-4 overflow-y-auto mx-6 md:w-2/3 md:text-l">
             <p>
               Lorem ipsum dolor sit amet. Hic ipsam fugit et sunt ullam aut enim
               quis non voluptas asperiores et accusantium sint. Id accusantium

@@ -2,8 +2,7 @@ import React from "react";
 import Logo from "../../content/logowhite.svg";
 import Search from "../../content/search.svg";
 import profile from "../../content/profile12.png";
-import Toggle from "../../component/Dark/Dark";
-
+import { Link } from "react-router-dom"; // importez Link depuis react-router-dom
 
 const Navbar: React.FC = () => {
   return (
@@ -13,8 +12,6 @@ const Navbar: React.FC = () => {
         src={Logo}
         alt="Logo"
       />
-      <Toggle />
-
       <form className="flex items-center justify-end flex-1 cursor-text">
         <div className="relative flex items-center w-11/12 sm:w-40 md:w-48 lg:w-96 xl:w-96 2xl:w-100">
           <input
@@ -29,12 +26,13 @@ const Navbar: React.FC = () => {
           />
         </div>
       </form>
-
-      <img
-        className="inline-block h-9 w-9 m-2 lg:m-3 xl:m-4 2xl:m-5 rounded-full ring-2 ring-white"
-        src={profile}
-        alt="John Doe's profile"
-      />
+      <Link to="/profile">
+        <img
+          className="inline-block h-9 w-9 m-2 lg:m-3 xl:m-4 2xl:m-5 rounded-full ring-2 ring-white"
+          src={profile}
+          alt="John Doe's profile"
+        />
+      </Link>
     </nav>
   );
 };

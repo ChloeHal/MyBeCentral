@@ -12,7 +12,7 @@ function Comments(props: Props) {
           className="w-12 h-10 md:w-10 rounded-full object-cover"
           alt="profile picture"
         />
-        <div className="ml-4 w-full border border-gray-400 p-2 rounded-lg">
+        <div className="ml-4 w-full border border-gray-400 p-2 rounded-lg dark:text-whitish">
           <h3 className="font-bold">{props.commentName}</h3>
           <p>{props.commentText}</p>
         </div>

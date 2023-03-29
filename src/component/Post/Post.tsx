@@ -30,14 +30,14 @@ function Post(props: postProps) {
           className="w-12 h-12 rounded-full m-4 object-cover"
           alt="profile picture"
         />
-        <div>
+        <div className="dark:text-whitish">
           <h3 className="font-title font-bold">{props.name}</h3>
           <h4>
             {props.poste} - {props.company}
           </h4>
         </div>
       </div>
-      <div className="p-4 after:block after:mx-auto after:my-0 after:h-1 after:pt-6 after:w-[90%] after:content-[''] after:border-b after:border-b-gray-400">
+      <div className="p-4 after:block after:mx-auto after:my-0 after:h-1 after:pt-6 after:w-[90%] after:content-[''] after:border-b after:border-b-gray-400 dark:text-whitish">
         <p>{props.texte}</p>
         <p className="pt-4">{props.ashtag.map((item) => item + " ")}</p>
       </div>
