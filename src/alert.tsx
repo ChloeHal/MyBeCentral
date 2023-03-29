@@ -8,7 +8,7 @@ function Popup() {
 
   function handleDeactivate() {
     setIsOpen(false)
-}
+  }
 
   return (
     <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
