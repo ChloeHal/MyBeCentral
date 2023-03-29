@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
@@ -14,6 +15,8 @@ module.exports = {
         teal: "#06d6a0",
         blue: "#3258A5",
         whitish: "#fcf6ee",
+        grey: "#C2BDB7",
+        dark: "#000000",
       },
       fontFamily: {
         title: ["Rubik", "sans-serif"],
@@ -21,5 +24,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };

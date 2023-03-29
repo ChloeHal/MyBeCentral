@@ -5,15 +5,13 @@ import { useNavigate } from "react-router-dom";
 import Notification from "../component/Notification/Notification"; // import the Notification component
 import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
-import bg from "../content/backblue.png";
-
+import bg from "../content/newbackblue.png";
+import Toggle from "../component/Dark/Dark";
 function Login() {
   const navigateFeed = () => {
-    // 👇️ navigate to /
     navigate("/feed");
   };
   const navigateSignUp = () => {
-    // 👇️ navigate to /
     navigate("/signup");
   };
   const { t } = useTranslation();
@@ -70,15 +68,16 @@ function Login() {
       style={{
         backgroundImage: `url(${bg})`,
       }}
-      className="h-screen max-w-full flex justify-center items-center flex-col bg-[center_bottom_-10rem] sm:bg-[right_bottom_-20rem] lg:bg-cover lg:bg-top bg-contain bg-no-repeat"
+      className="h-screen bg-whitish dark:bg-dark dark:text-whitish lg:bg-right bg-right-bottom max-w-full flex justify-center items-center flex-col bg-cover bg-no-repeat"
     >
       {/* <img
         src={bg}
         alt="soft blue green background"
         className="absolute bottom-[0] left-10 z-[-1]"
       /> */}
-      <img src={logo} alt="logo" className="w-44 mb-10" />
+      <img src={logo} alt="logo" className="w-44 mb-10 dark:invert" />
       <form onSubmit={handleSubmit} className="p-4">
+        <Toggle />
         <Input
           type="text"
           name="email"
@@ -112,13 +111,11 @@ function Login() {
         </div>
       </form>
 
-      <Notification
-        title="Error"
-        isOpen={false}
-        toggleNotification={toggleNotification}
-      >
-        {errorMessage}
-      </Notification>
+      {isNotificationVisible ? (
+        <Notification title="Error" text={errorMessage} />
+      ) : (
+        <></>
+      )}
     </section>
   );
 }

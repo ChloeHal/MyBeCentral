@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Notification from "../component/Notification/Notification"; // import the Notification component
 import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
-import bg from "../content/backblue.png";
+import bg from "../content/newbackblue.png";
 
 function SignUp() {
   const navigateFeed = () => {
@@ -18,12 +18,6 @@ function SignUp() {
   };
   const { t } = useTranslation();
   const [isNotificationVisible, setIsNotificationVisible] = useState(false);
-
-  const toggleNotification = () => {
-    setIsNotificationVisible(
-      (prevIsNotificationVisible) => !prevIsNotificationVisible
-    );
-  };
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loginFormData, setLoginFormData] = useState({
@@ -75,9 +69,9 @@ function SignUp() {
       style={{
         backgroundImage: `url(${bg})`,
       }}
-      className="h-screen w-full flex justify-center items-center flex-col bg-[center_bottom_-10rem] sm:bg-[right_bottom_-20rem] lg:bg-cover lg:bg-top bg-contain bg-no-repeat"
+      className="h-screen bg-whitish dark:bg-dark dark:text-whitish lg:bg-right bg-right-bottom max-w-full flex justify-center items-center flex-col bg-cover bg-no-repeat"
     >
-      <img src={logo} alt="logo" className="w-28" />
+      <img src={logo} alt="logo" className="w-28 dark:invert" />
       <form onSubmit={handleSubmit} className="p-4">
         <Input
           type="text"
@@ -173,13 +167,11 @@ function SignUp() {
         </div>
       </form>
 
-      <Notification
-        title="Error"
-        isOpen={false}
-        toggleNotification={toggleNotification}
-      >
-        {errorMessage}
-      </Notification>
+      {isNotificationVisible ? (
+        <Notification title="Error" text={errorMessage} />
+      ) : (
+        <></>
+      )}
     </section>
   );
 }

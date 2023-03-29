@@ -1,4 +1,5 @@
 {
+  "slogan.label": "Connect and collaborate right next to your office",
   "name.label": "Name",
   "lastname.label": "Last name",
   "company.label": "Company",
@@ -10,9 +11,13 @@
   "follows.label": "follows",
   "filter.label": "filter",
   "search.label": "search",
-  "placeholder.label": "Something to say?",
+  "placeholder.label": "Anything to share?",
   "validate.label": "Validate",
   "hiring.label": "Hiring",
   "internship.label": "Internship",
-  "event.lable": "Event"
+  "event.label": "Event",
+  "post.label": "What is it about?",
+  "postplaceholder.label": "Tell us everything...",
+  "send.label": "Send",
+  "cancel.label": "Cancel"
 }
