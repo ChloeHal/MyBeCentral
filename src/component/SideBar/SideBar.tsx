@@ -102,7 +102,7 @@ function SideBar(props: Props) {
           }}
           classname="lg:hidden"
         />
-        <div className="flex justify-center h-3/4 lg:h-full lg:flex-col mb-5 ">
+        <div className="flex justify-center h-[90%] lg:h-full flex-col mb-5 ">
           <div className="overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-grey">
             <section className="lg:flex lg:flex-col">
               <h3 className="font-title text-lg py-3">Companies</h3>

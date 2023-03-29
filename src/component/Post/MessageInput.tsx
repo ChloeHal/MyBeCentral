@@ -31,7 +31,7 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
           onClick={() => setIsOpen(true)}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full px-4 py-2 text-dark bg-whitish border border-grey  shadow-xl shadow-grey rounded-md focus:outline-none focus:border-blue-500"
+          className="w-full px-4 py-2 text-dark bg-whitish border border-grey  shadow-lg shadow-teal/50 rounded-full focus:outline-none focus:border-blue-500"
         />
         <Transition show={isOpen} as={React.Fragment}>
           <Dialog
@@ -75,6 +75,42 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
                   >
                     {t("placeholder.label")}
                   </Dialog.Title>
+                  <div className="flex items-center justify-center w-full">
+                    <label
+                      htmlFor="dropzone-file"
+                      className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                    >
+                      <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                        <svg
+                          aria-hidden="true"
+                          className="w-10 h-10 mb-3 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                          ></path>
+                        </svg>
+                        <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                          <span className="font-semibold">Click to upload</span>{" "}
+                          or drag and drop
+                        </p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                          SVG, PNG, JPG or GIF (MAX. 800x400px)
+                        </p>
+                      </div>
+                      <input
+                        id="dropzone-file"
+                        type="file"
+                        className="hidden"
+                      />
+                    </label>
+                  </div>
                   <div className="mt-2">
                     <textarea
                       placeholder={t("postplaceholder.label") as string}
@@ -89,7 +125,7 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
                     onChange={setSelectedSubject}
                   >
                     <div className="relative mt-1">
-                      <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                      <Listbox.Button className="relative w-full cursor-default rounded-lg bg-whitish py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                         <span className="block truncate">
                           {selectedSubject}
                         </span>
@@ -106,7 +142,7 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                       >
-                        <Listbox.Options className="z-50 absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                        <Listbox.Options className="z-50 absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-whitish py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                           {subjects.map((subject, subjectId) => (
                             <Listbox.Option
                               key={subjectId}
@@ -145,6 +181,11 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
                       </Transition>
                     </div>
                   </Listbox>
+                  <h3 className="my-2">Hashtags</h3>
+                  <input
+                    type="text"
+                    className="border-2 border-grey bg-whitish rounded-md w-full p-1 focus:border-teal focus:outline-none"
+                  ></input>
                   <div className="mt-4">
                     <button
                       type="button"

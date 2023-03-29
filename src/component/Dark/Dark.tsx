@@ -6,7 +6,7 @@ import sunIcon from "../../content/sun.svg";
 export default function Example() {
   const [enabled, setEnabled] = useState(false);
   const handleDarkMode = () => {
-    const body = document.querySelector("body");
+    const body = document.querySelector("body")!;
     body.classList.toggle("dark");
     setEnabled(!enabled);
   };
