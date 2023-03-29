@@ -47,7 +47,7 @@ function PostAcomment(props: Props) {
     });
   }
   return (
-    <form className="flex justify-between p-4 pl-6">
+    <form className="flex justify-between p-4 pl-6 ">
       <img
         className="w-10 h-10 rounded-full object-cover"
         src={props.yourPicture}
