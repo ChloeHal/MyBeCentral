@@ -76,6 +76,7 @@ function Login() {
   };
 
   const [isEmailValid, setIsEmailValid] = useState(false);
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
 
   return (
     <section
@@ -109,6 +110,9 @@ function Login() {
           label={t("password.label")}
           value={loginFormData.password}
           onChange={handleInputChange}
+          className={`border ${
+            isPasswordValid ? "border-teal" : "border-pink"
+          }`}
         />
         <div className="flex justify-around mt-10">
           <Button
