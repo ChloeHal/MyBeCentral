@@ -9,11 +9,9 @@ import bg from "../content/newbackblue.png";
 import Toggle from "../component/Dark/Dark";
 function Login() {
   const navigateFeed = () => {
-    // 👇️ navigate to /
     navigate("/feed");
   };
   const navigateSignUp = () => {
-    // 👇️ navigate to /
     navigate("/signup");
   };
   const { t } = useTranslation();
@@ -113,13 +111,11 @@ function Login() {
         </div>
       </form>
 
-      <Notification
-        title="Error"
-        isOpen={false}
-        toggleNotification={toggleNotification}
-      >
-        {errorMessage}
-      </Notification>
+      {isNotificationVisible ? (
+        <Notification title="Error" text={errorMessage} />
+      ) : (
+        <></>
+      )}
     </section>
   );
 }

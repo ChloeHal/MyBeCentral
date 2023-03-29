@@ -6,7 +6,7 @@ interface Props {
 function Comments(props: Props) {
   return (
     <>
-      <div className="flex m-4 ml-6">
+      <div className="flex m-4 ml-6 bg-white">
         <img
           src={props.commentPicture}
           className="w-12 h-10 md:w-10 rounded-full object-cover"

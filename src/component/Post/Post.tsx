@@ -2,6 +2,7 @@ import profile from "../../content/profile.jpg";
 import Comments from "../Comments/Comments";
 import PostAcomment from "../Comments/PostAcomment";
 interface postProps {
+  id: number;
   name: string;
   picture: string;
   poste: string;
@@ -22,7 +23,7 @@ interface postAcommentProps {
 }
 function Post(props: postProps) {
   return (
-    <section className="border border-gray-400 shadow m-4 sm:m-20 rounded-lg ">
+    <section className="border border-gray-400 shadow m-4 sm:m-20 rounded-lg bg-whitish">
       <div className="flex items-center">
         <img
           src={props.picture}
@@ -48,7 +49,10 @@ function Post(props: postProps) {
           commentText={comment.commentText}
         />
       ))}
-      <PostAcomment yourPicture={props.postAcommentProps} />
+      <PostAcomment
+        yourPicture={props.postAcommentProps}
+        commentID={props.id}
+      />
     </section>
   );
 }
