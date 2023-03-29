@@ -7,6 +7,9 @@ import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
 import Toggle from "../component/Dark/Dark";
+import { useState } from "react";
+import { isValidEmail } from "./utils";
+
 function Login() {
   const navigateFeed = () => {
     navigate("/feed");
@@ -76,7 +79,7 @@ function Login() {
         className="absolute bottom-[0] left-10 z-[-1]"
       /> */}
       <img src={logo} alt="logo" className="w-44 mb-10 dark:invert" />
-      <form onSubmit={handleSubmit} className="p-4">
+      <form onSubmit={handleSubmit} className="p-4 invalid:border-pink-500">
         <Toggle />
         <Input
           type="text"
