@@ -2,6 +2,8 @@ import React from "react";
 import Logo from "../../content/logowhite.svg";
 import Search from "../../content/search.svg";
 import profile from "../../content/profile12.png";
+import { Link } from "react-router-dom"; // importez Link depuis react-router-dom
+
 const Navbar: React.FC = () => {
   return (
     <nav className="bg-black h-12 flex items-center p-2">
@@ -24,12 +26,13 @@ const Navbar: React.FC = () => {
           />
         </div>
       </form>
-
-      <img
-        className="inline-block h-9 w-9 m-2 lg:m-3 xl:m-4 2xl:m-5 rounded-full ring-2 ring-white"
-        src={profile}
-        alt="John Doe's profile"
-      />
+      <Link to="/profile">
+        <img
+          className="inline-block h-9 w-9 m-2 lg:m-3 xl:m-4 2xl:m-5 rounded-full ring-2 ring-white"
+          src={profile}
+          alt="John Doe's profile"
+        />
+      </Link>
     </nav>
   );
 };

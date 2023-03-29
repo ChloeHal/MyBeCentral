@@ -1,5 +1,4 @@
 import Post from "../component/Post/Post";
-import profile from "../content/profile.png";
 import SideBar from "../component/SideBar/SideBar";
 import Navbar from "../component/Navbar/navbar";
 import { useState, useEffect } from "react";
@@ -56,7 +55,7 @@ function Feed() {
   return (
     <>
       <Navbar />
-      <div className="md:flex md:justify-start md:items-start">
+      <div className="md:flex md:justify-start md:items-start dark:bg-black">
         <SideBar onChange={handleFilterChange} />
         {hasFilteredPosts ? (
           <div className="lg:ml-[451.25px]">
