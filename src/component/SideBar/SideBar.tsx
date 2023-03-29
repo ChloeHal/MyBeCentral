@@ -102,7 +102,11 @@ function SideBar(props: Props) {
           }}
           classname="lg:hidden"
         />
+<<<<<<< HEAD
         <div className="flex justify-center h-3/4 lg:h-full flex-col mb-5 ">
+=======
+        <div className="flex justify-center h-[90%] lg:h-full flex-col mb-5 ">
+>>>>>>> lou
           <div className="overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-grey">
             <section className="lg:flex lg:flex-col">
               <Toggle />
