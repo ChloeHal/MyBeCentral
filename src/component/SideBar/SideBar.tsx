@@ -102,49 +102,51 @@ function SideBar(props: Props) {
           }}
           classname="lg:hidden"
         />
-        <div className="flex justify-center h-3/4 lg:h-full lg:flex-col mb-5 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-grey">
-          <section className="lg:mt-60">
-            <h3 className="font-title text-lg py-3">Companies</h3>
-            {Companies.map((company, key) => (
+        <div className="flex justify-center h-3/4 lg:h-full lg:flex-col mb-5 ">
+          <div className="overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-grey">
+            <section className="lg:flex lg:flex-col">
+              <h3 className="font-title text-lg py-3">Companies</h3>
+              {Companies.map((company, key) => (
+                <Checkbox
+                  key={key}
+                  checkboxValue={company}
+                  checked={filter[company]}
+                  onChange={handleCheckboxInputChange}
+                />
+              ))}
+            </section>
+            <section className="lg:flex lg:flex-col">
+              <h3 className="font-title text-lg py-3">Subjects</h3>
               <Checkbox
-                key={key}
-                checkboxValue={company}
-                checked={filter[company]}
+                checkboxValue={t("hiring.label")}
                 onChange={handleCheckboxInputChange}
+                checked={filter[t("hiring.label")]}
               />
-            ))}
-          </section>
-          <section>
-            <h3 className="font-title text-lg py-3">Subjects</h3>
-            <Checkbox
-              checkboxValue={t("hiring.label")}
-              onChange={handleCheckboxInputChange}
-              checked={filter[t("hiring.label")]}
-            />
-            <Checkbox
-              checkboxValue={t("internship.label")}
-              onChange={handleCheckboxInputChange}
-              checked={filter[t("internship.label")]}
-            />
-            <Checkbox
-              checkboxValue={t("event.label")}
-              onChange={handleCheckboxInputChange}
-              checked={filter[t("event.label")]}
-            />
-          </section>
+              <Checkbox
+                checkboxValue={t("internship.label")}
+                onChange={handleCheckboxInputChange}
+                checked={filter[t("internship.label")]}
+              />
+              <Checkbox
+                checkboxValue={t("event.label")}
+                onChange={handleCheckboxInputChange}
+                checked={filter[t("event.label")]}
+              />
+            </section>
+          </div>
+          <Button
+            name={t("validate.label")}
+            color="teal"
+            clickHandler={() => {
+              handleFilterChange();
+              if (window.innerWidth < 1024) {
+                setHideSideBar(!hideSideBar);
+                setHideButton(!hideButton);
+              }
+            }}
+            class="flex justify-center items-center m-auto my-5"
+          />
         </div>
-        <Button
-          name={t("validate.label")}
-          color="teal"
-          clickHandler={() => {
-            handleFilterChange();
-            if (window.innerWidth < 1024) {
-              setHideSideBar(!hideSideBar);
-              setHideButton(!hideButton);
-            }
-          }}
-          class="flex justify-center items-center m-auto"
-        />
       </form>
     </>
   );
