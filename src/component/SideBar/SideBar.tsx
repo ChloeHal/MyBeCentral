@@ -5,7 +5,7 @@ import RoundButton from "../Button/RoundButton";
 import arrow from "../../content/arrow.svg";
 import Checkbox from "../Checkbox/Checkbox";
 import { Filters } from "../../assets/interface/Filters";
-
+import Toggle from "../../component/Dark/Dark";
 type FilterValue = {
   [key: string]: boolean;
 };
@@ -90,7 +90,7 @@ function SideBar(props: Props) {
         className={
           hideSideBar
             ? "hidden"
-            : "h-[calc(100vh-48px)] bg-black text-white lg:flex lg:flex-col lg:px-20 lg:py-10 p-4 lg:fixed"
+            : "h-[calc(100vh-48px)] bg-black shadow-xl shadow-whitish text-white lg:flex lg:flex-col lg:px-20 lg:py-10 p-4 lg:fixed"
         }
       >
         <RoundButton
@@ -102,9 +102,10 @@ function SideBar(props: Props) {
           }}
           classname="lg:hidden"
         />
-        <div className="flex justify-center h-3/4 lg:h-full lg:flex-col mb-5 ">
+        <div className="flex justify-center h-3/4 lg:h-full flex-col mb-5 ">
           <div className="overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-grey">
             <section className="lg:flex lg:flex-col">
+              <Toggle />
               <h3 className="font-title text-lg py-3">Companies</h3>
               {Companies.map((company, key) => (
                 <Checkbox

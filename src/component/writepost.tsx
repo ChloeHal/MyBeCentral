@@ -24,7 +24,7 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
           onClick={() => setIsOpen(true)}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full px-4 py-2 text-dark bg-whitish border border-grey  shadow-xl shadow-grey rounded-md focus:outline-none focus:border-blue-500 dark:bg-black dark:text-whitish"
+          className="w-full px-4 py-2 text-dark bg-whitish border border-grey  shadow-xl shadow-grey rounded-md focus:outline-none focus:border-blue-500 dark:bg-dark dark:text-whitish"
         />
         <Transition show={isOpen} as={React.Fragment}>
           <Dialog
@@ -61,7 +61,7 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-whitish shadow-xl rounded-lg">
+                <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-whitish shadow-lg rounded-full">
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-medium leading-6 text-dark"
@@ -86,7 +86,7 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
                         !message ? "bg-grey cursor-not-allowed" : ""
                       }`}
                     >
-                      Send
+                      hool
                     </button>
                     <button
                       type="button"
