@@ -72,7 +72,7 @@ function Feed() {
   return (
     <>
       <Navbar />
-      <div className="md:flex md:justify-start md:items-start">
+      <div className="md:flex md:justify-start md:items-start bg-whitish">
         <SideBar onChange={handleFilterChange} />
         {hasFilteredPosts ? (
           <div className="lg:ml-[451.25px]">
