@@ -7,8 +7,8 @@ import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
 import Toggle from "../component/Dark/Dark";
-import { useState } from "react";
-import { isValidEmail } from "./utils";
+import { isValidEmail, isValidPassword } from "react";
+
 
 function Login() {
   const navigateFeed = () => {
@@ -32,10 +32,19 @@ function Login() {
     password: "",
   });
   const navigate = useNavigate();
+
+  /* const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setLoginFormData((prevData) => ({ ...prevData, [name]: value }));
+  }; */
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setLoginFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
+    if (name === "email") {
+      setIsEmailValid(isValidEmail(value));
+    }
+};
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -66,6 +75,8 @@ function Login() {
     //   });
   };
 
+  const [isEmailValid, setIsEmailValid] = useState(false);
+
   return (
     <section
       style={{
@@ -87,7 +98,11 @@ function Login() {
           label={"Email"}
           value={loginFormData.email}
           onChange={handleInputChange}
+          className={`border ${
+            isEmailValid ? "border-teal" : "border-pink"
+          }`}
         />
+
         <Input
           type="password"
           name="password"
