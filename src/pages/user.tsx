@@ -7,9 +7,9 @@ import logo from "../content/becode.png";
 import back from "../content/newbackblue.png";
 import { useNavigate } from "react-router-dom";
 
-const Profile: React.FC = () => {
+const User: React.FC = () => {
   const navigate = useNavigate();
-  // Navigate to the feed page
+
   const navigateFeed = () => {
     navigate("/feed");
   };
@@ -67,4 +67,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default User;

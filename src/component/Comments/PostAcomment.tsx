@@ -54,11 +54,7 @@ function PostAcomment(props: Props) {
         alt="Your profile picture"
       />
       <input
-<<<<<<< HEAD
-        className="w-[70%] rounded-full border p-1 px-2 bg-whitish border-gray-400 sm:w-full sm:flex-1 sm:mx-4 focus:ring-pink focus:ring-2 focus:border-pink focus:outline-none focus:ring-offset-pink dark:bg-dark dark:text-whitish"
-=======
         className="bg-whitish w-[70%] rounded-full border p-1 px-2 border-gray-400 sm:w-full sm:flex-1 sm:mx-4 focus:ring-pink focus:ring-2 focus:border-pink focus:outline-none focus:ring-offset-pink dark:bg-dark dark:text-whitish"
->>>>>>> lou
         placeholder={t("placeholder.label") as string}
         type="text"
         onChange={handleComment}

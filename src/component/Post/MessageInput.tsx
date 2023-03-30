@@ -2,6 +2,7 @@ import React, { useState, Fragment } from "react";
 import { Dialog, Transition, Listbox } from "@headlessui/react";
 import { useTranslation } from "react-i18next";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import DragDrop from "../Drag&drop/Dragdrop";
 
 interface Props {
   onSubmit: (message: string) => void;
@@ -24,19 +25,19 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
   const [selectedSubject, setSelectedSubject] = useState(subjects[0]);
   return (
     <>
-      <div className="relative m-4 sm:mx-20">
+      <div className="m-4 sm:mx-20 relative">
         <input
           type="text"
           placeholder={t("placeholder.label") as string}
           onClick={() => setIsOpen(true)}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full px-4 py-2 text-dark bg-whitish dark:bg-dark border border-grey  shadow-lg shadow-teal dark:shadow-blue rounded-full focus:outline-none focus:border-blue-500"
+          className="w-full px-4 py-2 lg:mt-10 text-dark bg-whitish dark:bg-dark border border-grey  shadow-lg shadow-teal/50 dark:shadow-blue rounded-full focus:outline-none focus:border-blue-500"
         />
         <Transition show={isOpen} as={React.Fragment}>
           <Dialog
             as="div"
-            className="fixed inset-0 z-10 overflow-y-auto"
+            className="fixed inset-0 z-10"
             onClose={() => setIsOpen(false)}
           >
             <div className="min-h-screen px-4 text-center">
@@ -49,7 +50,7 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
               >
-                <Dialog.Overlay className="fixed inset-0 bg-black  dark:bg-whitish opacity-30" />
+                <Dialog.Overlay className="fixed inset-0 bg-black dark:bg-whitish opacity-30" />
               </Transition.Child>
 
               {/* This element is to trick the browser into centering the modal contents. */}
@@ -71,46 +72,11 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
                 <div className="inline-block w-full h-full max-w-md p-6 my-8 overflow-visible text-left align-middle transition-all transform bg-whitish dark:bg-dark dark:text-whitish shadow-xl rounded-lg">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-dark dark:text-whitish"
+                    className="text-lg font-medium leading-6 text-dark dark:text-whitish mb-2"
                   >
                     {t("placeholder.label")}
                   </Dialog.Title>
-                  <div className="flex items-center justify-center w-full">
-                    <label
-                      htmlFor="dropzone-file"
-                      className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
-                    >
-                      <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                        <svg
-                          aria-hidden="true"
-                          className="w-10 h-10 mb-3 text-gray-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                          ></path>
-                        </svg>
-                        <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                          <span className="font-semibold">Click to upload</span>{" "}
-                          or drag and drop
-                        </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
-                          SVG, PNG, JPG or GIF (MAX. 800x400px)
-                        </p>
-                      </div>
-                      <input
-                        id="dropzone-file"
-                        type="file"
-                        className="hidden"
-                      />
-                    </label>
-                  </div>
+                  <DragDrop />
                   <div className="mt-2">
                     <textarea
                       placeholder={t("postplaceholder.label") as string}

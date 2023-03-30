@@ -19,5 +19,8 @@
   "post.label": "What is it about?",
   "postplaceholder.label": "Tell us everything...",
   "send.label": "Send",
-  "cancel.label": "Cancel"
+  "cancel.label": "Cancel",
+  "upload.label": "Click to upload",
+  "drag.label": "or drag and drop",
+  "filetype.label": "PNG, JPG or GIF"
 }
