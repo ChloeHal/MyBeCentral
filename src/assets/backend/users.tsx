@@ -1,4 +1,14 @@
-const Users = {
+type User = {
+  id: number;
+  firstname: string;
+  lastname: string;
+  picture: string;
+  poste: string;
+  company: string;
+  description: string;
+};
+
+const Users: Record<number, User> = {
   1: {
     id: 1,
     firstname: "Jane",
@@ -27,6 +37,15 @@ const Users = {
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   4: {
+    id: 4,
+    firstname: "John",
+    lastname: "Doe",
+    picture: "src/content/profile3.png",
+    poste: "Etudiante",
+    company: "BeCode",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  5: {
     id: 4,
     firstname: "John",
     lastname: "Doe",
