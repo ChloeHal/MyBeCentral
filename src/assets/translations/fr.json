@@ -19,5 +19,8 @@
   "post.label": "Quel est le sujet?",
   "postplaceholder.label": "Dites nous tout...",
   "send.label": "Envoyer",
-  "cancel.label": "Annuler"
+  "cancel.label": "Annuler",
+  "upload.label": "Cliquez pour importer un fichier",
+  "drag.label": "ou faites le glisser et déposer-le",
+  "filetype.label": "PNG, JPG ou GIF"
 }

@@ -39,7 +39,7 @@ const UserProfileForm = () => {
     setUserProfile(mockUserProfile);
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     setUserProfile((prevState) => ({ ...prevState, [name]: value }));
   };
@@ -104,7 +104,9 @@ const UserProfileForm = () => {
           <select
             name="company"
             value={userProfile.company}
-            onChange={handleInputChange}
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+              handleInputChange(e)
+            }
             className="block w-full px-3 py-2 text-sm text-black bg-transparent border border-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm dark:border-whitish dark:text-whitish"
           >
             <option value="">Sélectionnez une entreprise</option>
