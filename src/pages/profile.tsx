@@ -1,11 +1,9 @@
 import RoundButton from "../component/Button/RoundButton";
 import heart from "../content/heartfull.svg";
 import arrow from "../content/arrow.svg";
-import profile from "../content/profile12.png";
 import logo from "../content/becode.png";
 import back from "../content/newbackblue.png";
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import users from "../assets/backend/users";
 import { useState, useEffect } from "react";
 interface User {
@@ -39,7 +37,7 @@ function Profile() {
   const handleButtonClick = () => {
     console.log("Button clicked!");
   };
-  console.log(user);
+
   return user ? (
     <div className="h-screen flex items-center justify-center relative bg-whitish dark:bg-dark dark:text-whitish">
       <RoundButton
@@ -57,10 +55,7 @@ function Profile() {
 
       <div className="flex flex-col h-screen lg:flex-row">
         <div className="h-1/2 relative lg:h-full lg:w-1/2 shadow-2xl ">
-          <img
-            src="https://storage.gra.cloud.ovh.net/v1/AUTH_f15a805d8d064e3d888db44fc6b34d2f/becentral/files/fF8x8DjXFHNcr8NhTsGXCIz7hsfGxfw3fEz6QoFu.svg"
-            className="w-full h-full object-cover"
-          />
+          <img src={user.picture} className="w-full h-full object-cover" />
         </div>
 
         <div
@@ -93,7 +88,7 @@ function Profile() {
       </div>
     </div>
   ) : (
-    <div>Loading</div>
+    <div>User not found</div>
   );
 }
 
