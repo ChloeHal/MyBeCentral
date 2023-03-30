@@ -2,10 +2,13 @@ type User = {
   id: number;
   firstname: string;
   lastname: string;
+  name: string;
   picture: string;
   poste: string;
   company: string;
   description: string;
+  followers: number;
+  following: string[];
 };
 
 const Users: Record<number, User> = {
@@ -58,13 +61,16 @@ const Users: Record<number, User> = {
     following: ["Marc Doe", "Jane Doe", "BeCode", "Sophie Doe"],
   },
   5: {
-    id: 4,
-    firstname: "John",
+    id: 5,
+    firstname: "James",
     lastname: "Doe",
+    name: "JamesDoe",
     picture: "src/content/profile3.png",
     poste: "Etudiante",
     company: "BeCode",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    followers: 270,
+    following: ["Marc Doe", "Jane Doe", "BeCode", "Sophie Doe"],
   },
 };
 export default Users;
