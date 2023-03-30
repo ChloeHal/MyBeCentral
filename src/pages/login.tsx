@@ -7,8 +7,6 @@ import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
 import Toggle from "../component/Dark/Dark";
-import { isValidEmail, isValidPassword } from "react";
-
 
 function Login() {
   const navigateFeed = () => {
@@ -32,19 +30,10 @@ function Login() {
     password: "",
   });
   const navigate = useNavigate();
-
-  /* const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setLoginFormData((prevData) => ({ ...prevData, [name]: value }));
-  }; */
-
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setLoginFormData((prevData) => ({ ...prevData, [name]: value }));
-    if (name === "email") {
-      setIsEmailValid(isValidEmail(value));
-    }
-};
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -75,9 +64,6 @@ function Login() {
     //   });
   };
 
-  const [isEmailValid, setIsEmailValid] = useState(false);
-  const [isPasswordValid, setIsPasswordValid] = useState(false);
-
   return (
     <section
       style={{
@@ -91,7 +77,7 @@ function Login() {
         className="absolute bottom-[0] left-10 z-[-1]"
       /> */}
       <img src={logo} alt="logo" className="w-44 mb-10 dark:invert" />
-      <form onSubmit={handleSubmit} className="p-4 invalid:border-pink-500">
+      <form onSubmit={handleSubmit} className="p-4">
         <Toggle />
         <Input
           type="text"
@@ -99,20 +85,13 @@ function Login() {
           label={"Email"}
           value={loginFormData.email}
           onChange={handleInputChange}
-          className={`border ${
-            isEmailValid ? "border-teal" : "border-pink"
-          }`}
         />
-
         <Input
           type="password"
           name="password"
           label={t("password.label")}
           value={loginFormData.password}
           onChange={handleInputChange}
-          className={`border ${
-            isPasswordValid ? "border-teal" : "border-pink"
-          }`}
         />
         <div className="flex justify-around mt-10">
           <Button
