@@ -63,6 +63,21 @@ function Login() {
     //   });
   };
 
+  const EmailInput: React.FC = () => {
+    const [isValidEmail, setIsValidEmail] = useState<boolean | null>(null);
+  
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const inputValue = e.target.value;
+  
+      // Regular expression to check if the input is a valid email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+      if (emailRegex.test(inputValue)) {
+        setIsValidEmail(true);
+      } else {
+        setIsValidEmail(false);
+      }
+
   return (
     <section
       style={{
@@ -83,7 +98,7 @@ function Login() {
           label={"Email"}
           value={loginFormData.email}
           onChange={handleInputChange}
-         
+          class={isValidEmail === true ? "teal-border" : isValidEmail === false ? "pink-border" : ""}
         />
         <Input
           type="password"
