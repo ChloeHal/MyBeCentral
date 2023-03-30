@@ -6,7 +6,6 @@ import Notification from "../component/Notification/Notification"; // import the
 import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
-import Toggle from "../component/Dark/Dark";
 
 function Login() {
   const navigateFeed = () => {
@@ -78,13 +77,13 @@ function Login() {
       /> */}
       <img src={logo} alt="logo" className="w-44 mb-10 dark:invert" />
       <form onSubmit={handleSubmit} className="p-4">
-        <Toggle />
         <Input
           type="text"
           name="email"
           label={"Email"}
           value={loginFormData.email}
           onChange={handleInputChange}
+         
         />
         <Input
           type="password"
