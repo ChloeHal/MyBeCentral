@@ -6,7 +6,6 @@ const companies = {
     logo: "/src/content/becode.png",
     description:
       "19 is a coding platform based on peer-to-peer learning, open 24/7, for all 18+, totally free for its participants thanks to the financing of sponsors, and being part of the 42 Network",
-    followers: 250,
   },
   2: {
     id: 2,
@@ -15,7 +14,6 @@ const companies = {
     logo: "/src/content/becode.png",
     description:
       "Improving the quality of life of kids in Belgium's public schools",
-    followers: 250,
   },
   3: {
     id: 3,
@@ -24,7 +22,6 @@ const companies = {
     logo: "/src/content/becode.png",
     description:
       "Helping educational companies and NGOs to improve Belgium's public education system",
-    followers: 250,
   },
   4: {
     id: 4,
@@ -33,7 +30,6 @@ const companies = {
     logo: "/src/content/becode.png",
     description:
       "Free 7-month trainings in Web Development, AI, DevOps or CyberSecurity. No diploma needed.",
-    followers: 250,
   },
   5: {
     id: 5,
@@ -42,7 +38,6 @@ const companies = {
     logo: "/src/content/becode.png",
     description:
       "Bibliothèques Sans Frontières wants to bring knowledge and information to those who are most in need.",
-    followers: 250,
   },
   6: {
     id: 6,
@@ -51,7 +46,6 @@ const companies = {
     logo: "/src/content/becode.png",
     description:
       "Bruxelles Formation is the French-speaking public service in charge of professional training in the Brussels Region.",
-    followers: 250,
   },
   7: {
     id: 7,
@@ -60,11 +54,24 @@ const companies = {
     logo: "/src/content/becode.png",
     description:
       "Co-searching.brussels, a place solely dedicated to knowledge and experience sharing between jobseekers.",
-    followers: 250,
+  },
+  8: {
+    id: 8,
+    name: "CodeNplay",
+    picture: "/src/content/backbecode.png",
+    logo: "/src/content/becode.png",
+    description:
+      "A school to understand robotics and computational thinking to creating code for kids between 6 & 12 years old.",
+  },
+  9: {
+    id: 9,
+    name: "Cool@School",
+    picture: "/src/content/backbecode.png",
+    logo: "/src/content/becode.png",
+    description:
+      "NGO willing to help kids to develop their emotional and social intelligence",
   },
 
-  // "CodeNplay",
-  // "Cool@School",
   // "CWF",
   // "eqla",
   // "EducIT",

@@ -79,3 +79,13 @@ input:checked + .slideBtnTg:before {
 .slideBtnTg.round:before {
   border-radius: 50%;
 }
+#underline_select {
+  background-image: url("/src/content/chevronDown.svg");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 28px;
+}

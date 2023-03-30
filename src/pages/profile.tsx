@@ -21,6 +21,9 @@ interface User {
 function Profile() {
   const { username } = useParams();
   const [user, setUser] = useState<User | null>(null);
+
+  const [color, setColor] = useState("");
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,7 +38,13 @@ function Profile() {
   };
 
   const handleButtonClick = () => {
-    console.log("Button clicked!");
+    setColor("pink");
+    setTimeout(() => setColor(""), 300);
+    if (user) {
+      //quand on auras le back il faut faire en sorte de checker si le user logged in a deja liker le profile pour qu'on puisse liker une seule fois
+      user.followers++;
+    }
+    console.log(user);
   };
 
   return user ? (
@@ -44,7 +53,9 @@ function Profile() {
         clickHandler={handleButtonClick}
         classname="absolute z-50 w-16 h-16 bg-pink md:w-20 md:h-20 shadow-xl"
         color=""
-        svg={<img src={heart} className="w-1/2 dark:invert" />}
+        svg={
+          <img src={heart} className={color ? "hidden" : "w-1/2 dark:invert"} />
+        }
       />
       <RoundButton
         clickHandler={navigateFeed}
