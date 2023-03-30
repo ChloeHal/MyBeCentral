@@ -9,11 +9,9 @@ import bg from "../content/newbackblue.png";
 
 function SignUp() {
   const navigateFeed = () => {
-    // 👇️ navigate to /
     navigate("/feed");
   };
   const navigateLogin = () => {
-    // 👇️ navigate to /
     navigate("/login");
   };
   const { t } = useTranslation();
