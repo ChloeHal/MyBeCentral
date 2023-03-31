@@ -35,7 +35,7 @@ function Company() {
   return company ? (
     <div className="h-screen flex items-center justify-center relative bg-whitish dark:bg-black dark:text-whitish">
       <div className="absolute z-50 w-20 h-20 md:w-24 md:h-24">
-        <img src={company.logo} className="object-cover" />
+        <img src={company.logo} className="object-cover bg-grey" />
       </div>
       <RoundButton
         clickHandler={navigateFeed}
