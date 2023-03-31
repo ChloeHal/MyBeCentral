@@ -152,7 +152,7 @@ function SideBar(props: Props) {
           <Toggle />
         </div>
         <div className="flex justify-center h-[90%] lg:h-full flex-col mb-5 ">
-          <div className="overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-grey">
+          <div className="overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-grey flex lg:block">
             <section className="lg:flex lg:flex-col">
               <h3 className="font-title text-lg py-3">Companies</h3>
               {Companies.map((company, key) => (

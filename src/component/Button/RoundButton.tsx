@@ -19,7 +19,7 @@ function RoundButton(props: Props) {
       hidden={props.hide}
       className={`bg-${
         props.color
-      } w-10 h-10 rounded-full flex items-center justify-center ${
+      } hover:scale-90 w-10 h-10 rounded-full flex items-center justify-center ${
         props.classname ?? ""
       }`}
     >
