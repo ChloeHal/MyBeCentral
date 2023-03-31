@@ -1,11 +1,9 @@
 import RoundButton from "../component/Button/RoundButton";
 import heart from "../content/heartfull.svg";
 import arrow from "../content/arrow.svg";
-import profile from "../content/profile12.png";
 import logo from "../content/becode.png";
 import back from "../content/newbackblue.png";
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import users from "../assets/backend/users";
 import { useState, useEffect } from "react";
 interface User {
@@ -23,6 +21,9 @@ interface User {
 function Profile() {
   const { username } = useParams();
   const [user, setUser] = useState<User | null>(null);
+
+  const [color, setColor] = useState("");
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,16 +38,24 @@ function Profile() {
   };
 
   const handleButtonClick = () => {
-    console.log("Button clicked!");
+    setColor("pink");
+    setTimeout(() => setColor(""), 300);
+    if (user) {
+      //quand on auras le back il faut faire en sorte de checker si le user logged in a deja liker le profile pour qu'on puisse liker une seule fois
+      user.followers++;
+    }
+    console.log(user);
   };
-  console.log(user);
+
   return user ? (
     <div className="h-screen flex items-center justify-center relative bg-whitish dark:bg-dark dark:text-whitish">
       <RoundButton
         clickHandler={handleButtonClick}
         classname="absolute z-50 w-16 h-16 bg-pink md:w-20 md:h-20 shadow-xl"
         color=""
-        svg={<img src={heart} className="w-1/2 dark:invert" />}
+        svg={
+          <img src={heart} className={color ? "hidden" : "w-1/2 dark:invert"} />
+        }
       />
       <RoundButton
         clickHandler={navigateFeed}
@@ -57,10 +66,7 @@ function Profile() {
 
       <div className="flex flex-col h-screen lg:flex-row">
         <div className="h-1/2 relative lg:h-full lg:w-1/2 shadow-2xl ">
-          <img
-            src="https://storage.gra.cloud.ovh.net/v1/AUTH_f15a805d8d064e3d888db44fc6b34d2f/becentral/files/fF8x8DjXFHNcr8NhTsGXCIz7hsfGxfw3fEz6QoFu.svg"
-            className="w-full h-full object-cover"
-          />
+          <img src={user.picture} className="w-full h-full object-cover" />
         </div>
 
         <div
@@ -93,7 +99,7 @@ function Profile() {
       </div>
     </div>
   ) : (
-    <div>Loading</div>
+    <div>User not found</div>
   );
 }
 
