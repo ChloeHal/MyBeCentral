@@ -61,9 +61,10 @@ const Users: Record<number, User> = {
     following: ["Marc Doe", "Jane Doe", "BeCode", "Sophie Doe"],
   },
   5: {
-    id: 4,
+    id: 5,
     firstname: "John",
     lastname: "Doe",
+    name: "JohnDoe",
     picture: "src/content/profile3.png",
     poste: "Etudiante",
     company: "BeCode",
