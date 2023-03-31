@@ -79,7 +79,7 @@ function Feed() {
     <>
       <GoBackTop />
       <Navbar />
-      <div className="mt-12 bg-whitish dark:bg-dark">
+      <div className="mt-12 bg-whitless dark:bg-dark">
         <SideBar
           onChange={handleFilterChange}
           isOpen={isSidebarOpen}
