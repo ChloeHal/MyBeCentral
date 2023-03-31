@@ -16,3 +16,23 @@ Using a combination of:
 - [React](https://reactjs.org)
 - [Typescript](https://www.typescriptlang.org)
 - [Headless UI](https://headlessui.com/)
+
+## What does it look like?
+
+Like this:
+
+![Logo](./src/content/logo.png)
+
+![Landing page](./src/content/screenshots/Screenshot%202023-03-31%20at%2016.55.03.png)
+
+![Sign Up](./src/content/screenshots/Screenshot%202023-03-31%20at%2016.56.10.png)
+
+![Login](./src/content/screenshots/Screenshot%202023-03-31%20at%2017.08.37.png)
+
+![Feed](./src/content/screenshots/Screenshot%202023-03-31%20at%2016.56.41.png)
+
+![Post](./src/content/screenshots/Screenshot%202023-03-31%20at%2017.09.11.png)
+
+![Profile](./src/content/screenshots/Screenshot%202023-03-31%20at%2017.08.54.png)
+
+![BeCode](./src/content/becode.png)
