@@ -66,7 +66,7 @@ const SearchBar: React.FC = () => {
           open={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         >
-          <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+          <Dialog.Overlay className="fixed inset-0 bg-black dark:bg-whitish opacity-30" />
           <div className="min-h-screen px-4 text-center">
             <Transition.Child
               as={React.Fragment}
@@ -94,25 +94,34 @@ const SearchBar: React.FC = () => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+              <div className="inline-block w-full max-w-md p-6 my-8 scroll-y-auto overflow-hidden text-left align-middle transition-all transform bg-white dark:bg-dark  shadow-xl rounded-2xl">
                 <Dialog.Title
                   as="h3"
-                  className="text-lg font-medium leading-6 text-gray-900"
+                  className="text-lg font-medium leading-6 text-gray-900 dark:text-whitish pb-4"
                 >
                   Résultats de la recherche
                 </Dialog.Title>
-                <div className="mt-2">
+                <div className="mt-2 ">
                   {searchResults.length === 0 ? (
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-dark dark:text-whitish">
                       Aucun résultat trouvé.
                     </p>
                   ) : (
-                    <ul className="space-y-4">
+                    <ul className="space-y-8 scroll-y-auto">
                       {searchResults.map((result) => (
-                        <li key={result.id} className="text-sm text-gray-700">
+                        <li
+                          key={result.id}
+                          className="text-sm text-gray-700 dark:text-whitish"
+                        >
                           <a
                             href={`profile/${result.firstname}${result.lastname}`}
+                            className="bg-darkless rounded-md pl-2 pr-4 py-3"
                           >
+                            <img
+                              src={result.picture}
+                              className="inline-block w-8 h-8 rounded-full mr-2 object-cover"
+                              alt="Photo de profil miniature"
+                            />
                             {result.firstname} {result.lastname} -{" "}
                             {result.poste} chez {result.company}
                           </a>
@@ -125,7 +134,7 @@ const SearchBar: React.FC = () => {
                 <div className="mt-4">
                   <button
                     type="button"
-                    className="inline-flex justify-center px-4 py-2 text-sm font-medium text-black bg-blue-600 border border-transparent rounded-md hover:bg-blue-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                    className="inline-flex justify-center px-4 py-2 mt-4 text-sm font-medium text-black dark:bg-whitish bg-blue-600 border border-transparent rounded-md hover:bg-blue-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                     onClick={() => setIsModalOpen(false)}
                   >
                     Fermer

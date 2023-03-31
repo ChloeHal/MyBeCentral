@@ -11,6 +11,8 @@ type FilterValue = {
 };
 interface Props {
   onChange: (value: Filters) => void;
+  isOpen: boolean;
+  toggleSideBar: () => void;
 }
 
 function SideBar(props: Props) {
@@ -31,9 +33,63 @@ function SideBar(props: Props) {
     "Google digitaal atelier",
     "Hack your future",
     "Khan Academy",
+    "Le wagon",
+    "mediawijs",
+    "Orange Digital Center",
+    "skills factory",
+    "Solvay",
+    "Switchfully",
+    "Teach for belgium",
+    "Techies lab",
+    "Agence Digitale Solidaire",
+    "alan",
+    "AR#S",
+    "beAngels",
+    "bundl",
+    "campfire",
+    "clyde.and.bonnie",
+    "Curewiki",
+    "d-teach",
+    "D4D HUB",
+    "DataPrep",
+    "FARI",
+    "flowchase",
+    "Free Ukraine",
+    "hub brussels",
+    "inflights",
+    "M44",
+    "Mojo",
+    "moon9",
+    "nextmo-ov",
+    "nextORIGIN",
+    "NOSKUA",
+    "Outsight Studio",
+    "redpencil.io",
+    "RingTwice",
+    "Rosa",
+    "SCALEFUND",
+    "Simple Backups",
+    "skipr",
+    "SocialCom",
+    "sortlist",
+    "startup factory",
+    "Stooml-nk.",
+    "sustAIn.brussels",
+    "tech eu",
+    "TYREL",
+    "UNBLND",
+    "Valkuren",
+    "zerocopy",
+    "ALLIED FOR STARTUPS",
+    "The Democratic Society",
+    "Ecas",
+    "ESN",
+    "King Baudouin Foundation",
+    "open knowledge belgium",
+    "We tech care",
   ];
   const subjects = [t("hiring.label"), t("internship.label"), t("event.label")];
-  const { onChange } = props;
+  const { onChange, toggleSideBar, isOpen } = props;
   const [filter, setFilter] = useState<Filters>({});
 
   useEffect(() => {
@@ -61,18 +117,8 @@ function SideBar(props: Props) {
   };
   const handleFilterChange = () => {
     onChange(filter);
-    console.log(filter);
   };
   const [hideButton, setHideButton] = useState(false);
-  const [hideSideBar, setHideSideBar] = useState(true);
-  useEffect(() => {
-    if (window.innerWidth < 1024) {
-      setHideButton(false);
-    } else if (window.innerWidth > 1024) {
-      setHideButton(true);
-      setHideSideBar(false);
-    }
-  }, []);
 
   return (
     <>
@@ -80,32 +126,34 @@ function SideBar(props: Props) {
         name={t("filter.label")}
         color="black"
         clickHandler={() => {
-          setHideSideBar(!hideSideBar);
+          toggleSideBar();
           setHideButton(!hideButton);
         }}
         hide={hideButton}
-        class="m-4 mb-0"
+        class="m-4 mb-0 lg:fixed"
       />
       <form
         className={
-          hideSideBar
+          !isOpen
             ? "hidden"
-            : "h-[calc(100vh-48px)] bg-black shadow-xl shadow-whitish text-white lg:flex lg:flex-col lg:px-20 lg:py-10 p-4 lg:fixed"
+            : "h-[calc(100vh-48px)] bg-black shadow-xl shadow-dark/70 dark:shadow-whitish text-white lg:flex lg:flex-col lg:px-20 lg:pb-20 p-4 lg:fixed"
         }
       >
-        <RoundButton
-          color="black"
-          svg={<img src={arrow} alt="go back" className="w-1/2" />}
-          clickHandler={() => {
-            setHideButton(false);
-            setHideSideBar(!hideSideBar);
-          }}
-          classname="lg:hidden"
-        />
-        <div className="flex justify-center h-3/4 lg:h-full flex-col mb-5 ">
+        <div className="flex justify-between items-center">
+          <RoundButton
+            color="black"
+            svg={<img src={arrow} alt="go back" className="w-1/2" />}
+            clickHandler={() => {
+              setHideButton(false);
+              toggleSideBar();
+            }}
+            classname=""
+          />
+          <Toggle />
+        </div>
+        <div className="flex justify-center h-[90%] lg:h-full flex-col mb-5 ">
           <div className="overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-grey">
             <section className="lg:flex lg:flex-col">
-              <Toggle />
               <h3 className="font-title text-lg py-3">Companies</h3>
               {Companies.map((company, key) => (
                 <Checkbox
@@ -140,10 +188,8 @@ function SideBar(props: Props) {
             color="teal"
             clickHandler={() => {
               handleFilterChange();
-              if (window.innerWidth < 1024) {
-                setHideSideBar(!hideSideBar);
-                setHideButton(!hideButton);
-              }
+              toggleSideBar();
+              setHideButton(!hideButton);
             }}
             class="flex justify-center items-center m-auto my-5"
           />

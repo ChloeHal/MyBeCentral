@@ -23,7 +23,7 @@ interface postAcommentProps {
 }
 function Post(props: postProps) {
   return (
-    <section className="border border-gray-400 shadow m-4 sm:m-20 rounded-lg bg-whitish dark:bg-dark">
+    <section className=" drop-shadow-md mt-8 mx-8 sm:mt-12 sm:mx-12 rounded-lg bg-whitish dark:bg-darkless">
       <div className="flex items-center">
         <img
           src={props.picture}

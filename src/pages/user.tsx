@@ -2,14 +2,14 @@ import React from "react";
 import RoundButton from "../component/Button/RoundButton";
 import edit from "../content/edit.svg";
 import arrow from "../content/arrow.svg";
-import profile from "../content/profile16.jpg";
+import profile from "../content/profile16.png";
 import logo from "../content/becode.png";
 import back from "../content/newbackblue.png";
 import { useNavigate } from "react-router-dom";
 
-const Profile: React.FC = () => {
+const User: React.FC = () => {
   const navigate = useNavigate();
-  // Navigate to the feed page
+
   const navigateFeed = () => {
     navigate("/feed");
   };
@@ -67,4 +67,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default User;

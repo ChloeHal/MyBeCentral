@@ -2,6 +2,7 @@ import React, { useState, Fragment } from "react";
 import { Dialog, Transition, Listbox } from "@headlessui/react";
 import { useTranslation } from "react-i18next";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import DragDrop from "../Drag&drop/Dragdrop";
 
 interface Props {
   onSubmit: (message: string) => void;
@@ -24,19 +25,19 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
   const [selectedSubject, setSelectedSubject] = useState(subjects[0]);
   return (
     <>
-      <div className="relative m-4 sm:mx-20">
+      <div className="m-4 sm:mx-20 relative">
         <input
           type="text"
           placeholder={t("placeholder.label") as string}
           onClick={() => setIsOpen(true)}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full px-4 py-2 text-dark bg-whitish dark:bg-dark border border-grey  shadow-lg shadow-teal dark:shadow-blue rounded-full focus:outline-none focus:border-blue-500"
+          className="w-full px-4 py-2 lg:mt-10 text-dark dark:text-whitish bg-whitish dark:bg-dark border shadow-md  shadow-blue/70 rounded-full focus:outline-none focus:border-blue-500"
         />
         <Transition show={isOpen} as={React.Fragment}>
           <Dialog
             as="div"
-            className="fixed inset-0 z-10 overflow-y-auto"
+            className="fixed inset-0 z-10"
             onClose={() => setIsOpen(false)}
           >
             <div className="min-h-screen px-4 text-center">
@@ -49,7 +50,7 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
               >
-                <Dialog.Overlay className="fixed inset-0 bg-black  dark:bg-whitish opacity-30" />
+                <Dialog.Overlay className="fixed inset-0 bg-black dark:bg-whitish opacity-30" />
               </Transition.Child>
 
               {/* This element is to trick the browser into centering the modal contents. */}
@@ -71,11 +72,12 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
                 <div className="inline-block w-full h-full max-w-md p-6 my-8 overflow-visible text-left align-middle transition-all transform bg-whitish dark:bg-dark dark:text-whitish shadow-xl rounded-lg">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-dark dark:text-whitish"
+                    className="text-lg font-medium leading-6 text-dark dark:text-whitish mb-2"
                   >
                     {t("placeholder.label")}
                   </Dialog.Title>
-                  <div className="mt-2 ">
+                  <DragDrop />
+                  <div className="mt-2">
                     <textarea
                       placeholder={t("postplaceholder.label") as string}
                       value={message}
@@ -145,6 +147,11 @@ const MessageInput: React.FC<Props> = ({ onSubmit }) => {
                       </Transition>
                     </div>
                   </Listbox>
+                  <h3 className="my-2">Hashtags</h3>
+                  <input
+                    type="text"
+                    className="border-2 border-grey bg-whitish rounded-md w-full p-1 focus:border-teal focus:outline-none"
+                  ></input>
                   <div className="mt-4">
                     <button
                       type="button"

@@ -6,8 +6,15 @@ import posts from "../assets/backend/posts";
 import { Filters } from "../assets/interface/Filters";
 import Notification from "../component/Notification/Notification";
 import MessageInput from "../component/Post/MessageInput";
+import DragDrop from "../component/Drag&drop/Dragdrop";
+import GoBackTop from "../component/GoBackTop/GoBackTop";
 
 function Feed() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSideBar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+    console.log(isSidebarOpen);
+  };
   const [filter, setFilter] = useState<Filters>({});
   const [noPost, setNoPost] = useState(false);
   const handleFilterChange = (newFilter: Filters) => {
@@ -70,11 +77,16 @@ function Feed() {
   );
   return (
     <>
+      <GoBackTop />
       <Navbar />
-      <div className="mt-12 md:flex md:justify-start md:items-start bg-whitish dark:bg-dark">
-        <SideBar onChange={handleFilterChange} />
+      <div className="mt-12 bg-whitless dark:bg-dark">
+        <SideBar
+          onChange={handleFilterChange}
+          isOpen={isSidebarOpen}
+          toggleSideBar={toggleSideBar}
+        />
         {hasFilteredPosts ? (
-          <div className="lg:ml-[451.25px]">
+          <div className={isSidebarOpen ? "lg:ml-[451.25px]" : "lg:mx-60"}>
             <MessageInput
               onSubmit={(message) => {
                 console.log(message);
