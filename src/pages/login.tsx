@@ -6,6 +6,7 @@ import Notification from "../component/Notification/Notification"; // import the
 import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
+
 function Login() {
   const navigateFeed = () => {
     navigate("/feed");
@@ -69,11 +70,6 @@ function Login() {
       }}
       className="h-screen bg-whitish dark:bg-dark dark:text-whitish lg:bg-right bg-right-bottom max-w-full flex justify-center items-center flex-col bg-cover bg-no-repeat"
     >
-      {/* <img
-        src={bg}
-        alt="soft blue green background"
-        className="absolute bottom-[0] left-10 z-[-1]"
-      /> */}
       <img src={logo} alt="logo" className="w-44 mb-10 dark:invert" />
       <form onSubmit={handleSubmit} className="p-4">
         <Input

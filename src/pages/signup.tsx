@@ -9,6 +9,7 @@ import bg from "../content/newbackblue.png";
 import companies from "../assets/backend/companies";
 
 function SignUp() {
+  Object.values(companies).map((company) => console.log(company.name));
   const navigateFeed = () => {
     navigate("/feed");
   };
@@ -32,8 +33,13 @@ function SignUp() {
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setLoginFormData((prevData) => ({ ...prevData, [name]: value }));
+    console.log(loginFormData);
   };
-
+  const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const { value } = event.target;
+    setLoginFormData((prevData) => ({ ...prevData, company: value }));
+    console.log(loginFormData);
+  };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     //e.preventDefault();
     console.log(loginFormData);
@@ -105,15 +111,11 @@ function SignUp() {
         </label>
         <select
           value={loginFormData.company}
-          onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-            handleInputChange
-          }
+          onChange={handleSelectChange}
           id="underline_select"
-          className={`mb-4 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-black appearance-none dark:text-whitish dark:border-whitish focus:outline-none focus:ring-0`}
+          className={`mb-4 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-black appearance-none dark:text-whitish dark:border-whitish focus:outline-none focus:ring-0 scrollbar-thin scrollbar-track-white  scrollbar-thumb-black`}
         >
-          <option defaultValue={"company choice"}>
-            {t("companychoice.label")}
-          </option>
+          <option value="">{t("companychoice.label")}</option>
           {Object.values(companies).map((company, key) => (
             <option key={key} value={company.name}>
               {company.name}
@@ -147,7 +149,7 @@ function SignUp() {
               });
             }}
           />
-          <div className="bg-transparent border rounded-md border-black w-8 h-8 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-black">
+          <div className="bg-transparent border rounded-md border-black dark:border-whitish w-8 h-8 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-teal dark:focus-within:border-teal">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -174,14 +176,14 @@ function SignUp() {
             type="button"
             clickHandler={() => {
               console.log(loginFormData);
-              navigateLogin();
+              navigateFeed();
             }}
           />
           <Button
             color="black"
             name={t("login.label")}
             type="submit"
-            clickHandler={navigateFeed}
+            clickHandler={navigateLogin}
           />
         </div>
       </form>

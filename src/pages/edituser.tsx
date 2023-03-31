@@ -3,9 +3,10 @@ import { useTranslation } from "react-i18next";
 import Input from "../component/Input/Input";
 import Button from "../component/Button/Button";
 import bg from "../content/newbackblue.png";
-import logo from "../content/logoblack.png";
+import profile from "../content/profileblack.png";
 import companies from "../assets/backend/companies";
 import DragDrop from "../component/Drag&drop/Dragdrop";
+import profilepic from "../content/profile16.png";
 
 type UserProfile = {
   firstName: string;
@@ -31,21 +32,24 @@ const UserProfileForm = () => {
   useEffect(() => {
     // simulate loading user profile data from API
     const mockUserProfile: UserProfile = {
-      firstName: "John",
-      lastName: "Doe",
-      email: "johndoe@example.com",
-      company: "Acme Inc.",
+      firstName: "Mémé",
+      lastName: "PHP",
+      email: "méméphp@example.com",
+      company: "BeCode",
       photo: "",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     };
     setUserProfile(mockUserProfile);
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setUserProfile((prevState) => ({ ...prevState, [name]: value }));
   };
-
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = e.target;
+    setUserProfile((prevState) => ({ ...prevState, company: value }));
+  };
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -75,8 +79,8 @@ const UserProfileForm = () => {
         />
       ) : (
         <img
-          src={logo}
-          alt="logo"
+          src={profilepic}
+          alt="profile picture"
           className="w-24 h-24 rounded-full m-4 object-cover"
         />
       )}
@@ -116,15 +120,15 @@ const UserProfileForm = () => {
           </label>
           <select
             value={userProfile.company}
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-              handleInputChange(e)
-            }
+            onChange={handleSelectChange}
             id="underline_select"
-            className={` block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-black appearance-none dark:text-whitish dark:border-whitish focus:outline-none focus:ring-0`}
+            className={`scrollbar-thin scrollbar-track-white  scrollbar-thumb-black block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-black appearance-none dark:text-whitish dark:border-whitish focus:outline-none focus:ring-0`}
           >
-            <option selected>{t("companychoice.label")}</option>
-            {Object.values(companies).map((company) => (
-              <option value={company.name}>{company.name}</option>
+            <option value="">{t("companychoice.label")}</option>
+            {Object.values(companies).map((company, key) => (
+              <option key={key} value={company.name}>
+                {company.name}
+              </option>
             ))}
           </select>
 
@@ -140,14 +144,14 @@ const UserProfileForm = () => {
           <Input
             type="textarea"
             name="description"
-            label={t("Description")}
+            label="Description"
             value={userProfile.description}
             onChange={handleInputChange}
           />
         </div>
         <Button
           color="black"
-          name={t("Save changes")}
+          name={t("save.label")}
           type="submit"
           clickHandler={handleSaveChanges}
         />

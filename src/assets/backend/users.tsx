@@ -175,6 +175,5 @@ const Users: Record<number, User> = {
     followers: 1100,
     following: ["Jack Harrison", "Solvay"],
   },
-
 };
 export default Users;
