@@ -6,6 +6,7 @@ import Notification from "../component/Notification/Notification"; // import the
 import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
+import companies from "../assets/backend/companies";
 
 function SignUp() {
   const navigateFeed = () => {
@@ -34,7 +35,7 @@ function SignUp() {
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    //e.preventDefault();
     console.log(loginFormData);
     // fetch("http://localhost:3000/signin", {
     //   method: "POST",
@@ -92,13 +93,33 @@ function SignUp() {
           value={loginFormData.email}
           onChange={handleInputChange}
         />
-        <Input
+        {/* <Input
           type="text"
           name="company"
           label={t("company.label")}
           value={loginFormData.company}
           onChange={handleInputChange}
-        />
+        /> */}
+        <label htmlFor="underline_select" className="sr-only">
+          Underline select
+        </label>
+        <select
+          value={loginFormData.company}
+          onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+            handleInputChange
+          }
+          id="underline_select"
+          className={`mb-4 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-black appearance-none dark:text-whitish dark:border-whitish focus:outline-none focus:ring-0`}
+        >
+          <option defaultValue={"company choice"}>
+            {t("companychoice.label")}
+          </option>
+          {Object.values(companies).map((company, key) => (
+            <option key={key} value={company.name}>
+              {company.name}
+            </option>
+          ))}
+        </select>
         <Input
           type="password"
           name="password"

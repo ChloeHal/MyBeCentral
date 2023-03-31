@@ -21,7 +21,10 @@
   "send.label": "Envoyer",
   "cancel.label": "Annuler",
   "upload.label": "Cliquez pour importer un fichier",
-  "drag.label": "ou faites le glisser et déposer-le",
+  "drag.label": "ou faites le glisser et déposez-le",
   "filetype.label": "PNG, JPG ou GIF",
-  "companychoice.label": "Sélectionnez votre entreprise"
+  "companychoice.label": "Sélectionnez votre entreprise",
+  "404.label": "Une erreur s'est produite...",
+  "404p.label": "Cliquez ci-dessous pour revenir à la page précédente",
+  "goback.label": "Revenir en arrière"
 }
