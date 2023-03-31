@@ -24,6 +24,7 @@ function Login() {
   };
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState<boolean | null>(null);
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
@@ -63,8 +64,8 @@ function Login() {
     //   });
   };
 
-  const EmailInput: React.FC = () => {
-    const [isValidEmail, setIsValidEmail] = useState<boolean | null>(null);
+  function EmailInput() {
+    
   
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const inputValue = e.target.value;
@@ -76,7 +77,7 @@ function Login() {
         setIsValidEmail(true);
       } else {
         setIsValidEmail(false);
-      }
+      }}}
 
   return (
     <section
@@ -133,6 +134,7 @@ function Login() {
       )}
     </section>
   );
-}
+      }
 
-export default Login;
+
+export default Login
