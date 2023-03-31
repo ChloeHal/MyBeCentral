@@ -18,16 +18,16 @@ const GoBackTop = () => {
     });
   };
   return (
-    <div className="fixed bottom-0 right-0 p-1 md:p-4 cursor-pointer">
+    <div className="fixed bottom-0 right-0 p-1 md:p-4 cursor-pointer z-40">
       {" "}
       {showTopBtn && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          fill="white"
+          fill="transparent"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-10 h-10 text-pink"
+          className="w-10 h-10 text-pink "
           onClick={goToTop}
         >
           <path

@@ -136,7 +136,7 @@ function SideBar(props: Props) {
         className={
           !isOpen
             ? "hidden"
-            : "h-[calc(100vh-48px)] bg-black shadow-xl shadow-whitish text-white lg:flex lg:flex-col lg:px-20 lg:pb-20 p-4 lg:fixed"
+            : "h-[calc(100vh-48px)] bg-black shadow-xl shadow-dark/70 dark:shadow-whitish text-white lg:flex lg:flex-col lg:px-20 lg:pb-20 p-4 lg:fixed"
         }
       >
         <div className="flex justify-between items-center">
