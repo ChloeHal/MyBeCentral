@@ -23,5 +23,8 @@
   "upload.label": "Click to upload",
   "drag.label": "or drag and drop",
   "filetype.label": "PNG, JPG or GIF",
-  "companychoice.label": "Select your company"
+  "companychoice.label": "Select your company",
+  "404.label": "Something went wrong...",
+  "404p.label": "Click below to go back to the last page",
+  "goback.label": "Go back"
 }
