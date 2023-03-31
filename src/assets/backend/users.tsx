@@ -65,7 +65,7 @@ const Users: Record<number, User> = {
     firstname: "James",
     lastname: "Doe",
     name: "JamesDoe",
-    picture: "src/content/profile5.png",
+    picture: "src/content/profile3.png",
     poste: "Etudiante",
     company: "BeCode",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -175,5 +175,6 @@ const Users: Record<number, User> = {
     followers: 1100,
     following: ["Jack Harrison", "Solvay"],
   },
+
 };
 export default Users;

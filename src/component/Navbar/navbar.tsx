@@ -15,6 +15,7 @@ const Navbar: React.FC = () => {
       <Link to="/user">
         <img
           className="inline-block h-9 w-9 m-2 lg:m-3 xl:m-4 2xl:m-5 rounded-full"
+
           src={profile}
           alt="John Doe's profile"
         />

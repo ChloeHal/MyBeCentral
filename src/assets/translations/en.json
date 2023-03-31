@@ -22,5 +22,6 @@
   "cancel.label": "Cancel",
   "upload.label": "Click to upload",
   "drag.label": "or drag and drop",
-  "filetype.label": "PNG, JPG or GIF"
+  "filetype.label": "PNG, JPG or GIF",
+  "companychoice.label": "Select your company"
 }
