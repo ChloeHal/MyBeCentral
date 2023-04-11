@@ -26,5 +26,6 @@
   "companychoice.label": "Sélectionnez votre entreprise",
   "404.label": "Une erreur s'est produite...",
   "404p.label": "Cliquez ci-dessous pour revenir à la page précédente",
-  "goback.label": "Revenir en arrière"
+  "goback.label": "Revenir en arrière",
+  "save.label": "Sauvegarder"
 }

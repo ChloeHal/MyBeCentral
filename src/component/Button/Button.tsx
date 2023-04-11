@@ -18,8 +18,8 @@ function Button(props: props) {
       hidden={props.hide}
       className={
         props.color === "black"
-          ? `${props.class} bg-black text-white px-6 py-1 m-1 font-roboto dark:bg-whitish dark:text-black hover:text-black relative tracking-wider transition-all duration-500 ease-in-out cursor-pointer select-none bg-def hover:bg-transparent hover:text-def hover:dark:text-white`
-          : `${props.class} bg-teal text-black dark:bg-pink px-6 py-1 m-1 relative tracking-wider transition-all duration-500 ease-in-out cursor-pointer select-none bg-def hover:bg-transparent hover:text-def`
+          ? `${props.class} bg-black text-white px-6 py-1 m-1 font-roboto dark:bg-whitish dark:text-black hover:text-black relative tracking-wider transition-all duration-500 ease-in-out cursor-pointer select-none dark:hover:bg-transparent bg-def hover:bg-transparent hover:text-def hover:dark:text-white`
+          : `${props.class} bg-teal text-black dark:text-white dark:bg-pink px-6 py-1 m-1 relative tracking-wider transition-all duration-500 ease-in-out cursor-pointer select-none bg-def hover:bg-transparent dark:hover:bg-transparent hover:text-gray-800 hover:text-def`
       }
     >
       {props.name}

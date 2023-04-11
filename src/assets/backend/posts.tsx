@@ -6,8 +6,8 @@ const posts = {
     poste: "Etudiante chez BeCode",
     company: "BeCode",
     texte:
-      "Je suis ravie d'annoncer que j'ai commencé un nouveau chapitre passionnant dans ma carrière en tant qu'étudiante chez BeCode! J'apprends de nouvelles compétences et je suis impatiente de voir où cela me mènera. #study #skribble",
-    ashtag: ["#study", "#skribble"],
+      "Je suis ravie d'annoncer que j'ai commencé un nouveau chapitre passionnant dans ma carrière en tant qu'étudiante chez BeCode! J'apprends de nouvelles compétences et je suis impatiente de voir où cela me mènera.",
+    ashtag: ["#study", "#activePedagogy"],
     subject: "Embauche",
     comments: [
       {
@@ -28,7 +28,7 @@ const posts = {
     id: 2,
     name: "Mc John Doe",
     picture: "src/content/profile4.png",
-    poste: "Touriste chez Bruxelles formation",
+    poste: "Apprenant chez Bruxelles formation",
     company: "Bruxelles formation",
     texte:
       "Je suis en train de visiter Bruxelles et j'ai découvert un endroit incroyable près de la gare. Je recommande vivement le Starbucks local! #station #starbucks",
@@ -53,17 +53,17 @@ const posts = {
     id: 3,
     name: "Jack Doe",
     picture: "src/content/profile7.png",
-    poste: "Stagiaire chez 19",
+    poste: "Etudiant chez 19",
     company: "19",
     texte:
       "Je suis ravi d'avoir décroché un stage chez 19! Je suis impatient d'apprendre de nouvelles choses et de travailler avec une équipe talentueuse. #stage",
-    ashtag: ["#stage"],
-    subject: "Stage",
+    ashtag: ["#study"],
+    subject: "Other",
     comments: [
       {
         commentName: "John Doe",
         commentPicture: "src/content/profile8.png",
-        commentText: "Félicitations Jack, bonne chance pour ton stage!",
+        commentText: "Félicitations Jack, bonne chance !",
         commentID: 1,
       },
       {
@@ -79,7 +79,7 @@ const posts = {
     name: "Sophie Smith",
     picture: "src/content/profile10.png",
     poste: "Designer Graphique",
-    company: "Creative Co.",
+    company: "skills factory",
     texte:
       "Je suis heureuse de partager avec vous mon dernier projet de design graphique pour notre client ABC. C'était un travail passionnant qui m'a permis d'explorer de nouvelles idées et de pousser mes limites créatives. J'adorerais avoir votre avis sur le projet !",
     ashtag: ["#design", "#creativity"],
@@ -105,7 +105,7 @@ const posts = {
     name: "Mark Johnson",
     picture: "src/content/profile13.png",
     poste: "Développeur Web",
-    company: "Tech Co.",
+    company: "mediawijs",
     texte:
       "Je suis heureux de vous présenter notre dernier projet de développement web, qui a récemment été lancé. Nous avons travaillé dur pour créer une expérience utilisateur de qualité supérieure pour nos clients, et j'aimerais savoir ce que vous en pensez !",
     ashtag: ["#webdev", "#userexperience"],
@@ -131,10 +131,10 @@ const posts = {
     name: "Sarah Smith",
     picture: "src/content/profile16.png",
     poste: "Ingénieure en informatique",
-    company: "Microsoft",
+    company: "campfire",
     texte:
-      "Je suis ravie de rejoindre l'équipe de Microsoft en tant qu'ingénieure en informatique ! J'ai hâte de travailler sur des projets innovants et de contribuer au développement de nouvelles technologies.",
-    ashtag: ["#tech", "#Microsoft"],
+      "Je suis ravie de rejoindre l'équipe de campfire en tant qu'ingénieure en informatique ! J'ai hâte de travailler sur des projets innovants et de contribuer au développement de nouvelles technologies.",
+    ashtag: ["#tech", "#campfire"],
     subject: "Nouvel emploi",
     comments: [
       {
@@ -156,10 +156,10 @@ const posts = {
     name: "Alexandre Dupont",
     picture: "src/content/profile.png",
     poste: "Développeur Web",
-    company: "Freelance",
+    company: "Switchfully",
     texte:
-      "Je suis à la recherche de nouveaux projets en tant que développeur web freelance ! Si vous avez besoin d'un site internet ou d'une application web, n'hésitez pas à me contacter.",
-    ashtag: ["#webdev", "#freelance"],
+      "Je suis à la recherche de nouveaux projets en tant que développeur web Switchfully ! Si vous avez besoin d'un site internet ou d'une application web, n'hésitez pas à me contacter.",
+    ashtag: ["#webdev", "#Switchfully"],
     subject: "Recherche de projets",
     comments: [
       {
@@ -183,10 +183,10 @@ const posts = {
     name: "Sophie Martin",
     picture: "src/content/profile5.png",
     poste: "Consultante en marketing",
-    company: "Accenture",
+    company: "Google digitaal atelier",
     texte:
-      "Je suis ravie de rejoindre l'équipe d'Accenture en tant que consultante en marketing ! J'ai hâte de travailler avec des clients de renom et de contribuer à leur succès.",
-    ashtag: ["#marketing", "#Accenture"],
+      "Je suis ravie de rejoindre l'équipe d'Google digitaal atelier en tant que consultante en marketing ! J'ai hâte de travailler avec des clients de renom et de contribuer à leur succès.",
+    ashtag: ["#marketing", "#Google digitaal atelier"],
     subject: "Nouvel emploi",
     comments: [
       {
@@ -212,20 +212,20 @@ const posts = {
     poste: "Etudiante",
     company: "BeCode",
     texte:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie felis quis purus maximus euismod. Vivamus diam nibh, tempor in dictum a, pretium vitae augue.",
-    ashtag: ["#study", "#skribble"],
-    subject: "Embauche",
+      "Je suis heureuse de vous annoncer que je viens d'obtenir mon certificat en Web developpement. Merci beaucoup Dante!",
+    ashtag: ["#study", "#certificat"],
+    subject: "Other",
     comments: [
       {
         commentName: "John Doe",
         commentPicture: "src/content/profile9.png",
-        commentText: "Hello baby",
+        commentText: "Bravo!",
         commentID: 1,
       },
       {
         commentName: "Jane Doe",
         commentPicture: "src/content/profile10.png",
-        commentText: "Hi there!",
+        commentText: "Félicitations!",
         commentID: 2,
       },
     ],
@@ -238,7 +238,7 @@ const posts = {
     company: "BeCode",
     texte:
       "Je suis ravie d'annoncer que j'ai commencé un nouveau chapitre passionnant dans ma carrière en tant qu'étudiante chez BeCode! J'apprends de nouvelles compétences et je suis impatiente de voir où cela me mènera. #study #skribble",
-    ashtag: ["#study", "#skribble"],
+    ashtag: ["#study", "#web"],
     subject: "Embauche",
     comments: [
       {
@@ -310,7 +310,7 @@ const posts = {
     name: "Sophie Smith",
     picture: "src/content/profile3.png",
     poste: "Designer Graphique",
-    company: "Creative Co.",
+    company: "Orange Digital Center",
     texte:
       "Je suis heureuse de partager avec vous mon dernier projet de design graphique pour notre client ABC. C'était un travail passionnant qui m'a permis d'explorer de nouvelles idées et de pousser mes limites créatives. J'adorerais avoir votre avis sur le projet !",
     ashtag: ["#design", "#creativity"],
@@ -336,7 +336,7 @@ const posts = {
     name: "Mark Johnson",
     picture: "src/content/profile6.png",
     poste: "Développeur Web",
-    company: "Tech Co.",
+    company: "BeCode",
     texte:
       "Je suis heureux de vous présenter notre dernier projet de développement web, qui a récemment été lancé. Nous avons travaillé dur pour créer une expérience utilisateur de qualité supérieure pour nos clients, et j'aimerais savoir ce que vous en pensez !",
     ashtag: ["#webdev", "#userexperience"],
@@ -362,10 +362,10 @@ const posts = {
     name: "Sarah Smith",
     picture: "src/content/profile9.png",
     poste: "Ingénieure en informatique",
-    company: "Microsoft",
+    company: "moon9",
     texte:
-      "Je suis ravie de rejoindre l'équipe de Microsoft en tant qu'ingénieure en informatique ! J'ai hâte de travailler sur des projets innovants et de contribuer au développement de nouvelles technologies.",
-    ashtag: ["#tech", "#Microsoft"],
+      "Je suis ravie de rejoindre l'équipe de moon9 en tant qu'ingénieure en informatique ! J'ai hâte de travailler sur des projets innovants et de contribuer au développement de nouvelles technologies.",
+    ashtag: ["#tech", "#moon9"],
     subject: "Nouvel emploi",
     comments: [
       {
@@ -387,10 +387,10 @@ const posts = {
     name: "Alexandre Dupont",
     picture: "src/content/profile12.png",
     poste: "Développeur Web",
-    company: "Freelance",
+    company: "startup factory",
     texte:
-      "Je suis à la recherche de nouveaux projets en tant que développeur web freelance ! Si vous avez besoin d'un site internet ou d'une application web, n'hésitez pas à me contacter.",
-    ashtag: ["#webdev", "#freelance"],
+      "Je suis à la recherche de nouveaux projets en tant que développeur web startup factory ! Si vous avez besoin d'un site internet ou d'une application web, n'hésitez pas à me contacter.",
+    ashtag: ["#webdev", "#startup factory"],
     subject: "Recherche de projets",
     comments: [
       {
@@ -414,10 +414,10 @@ const posts = {
     name: "Sophie Martin",
     picture: "src/content/profile.png",
     poste: "Consultante en marketing",
-    company: "Accenture",
+    company: "SocialCom",
     texte:
-      "Je suis ravie de rejoindre l'équipe d'Accenture en tant que consultante en marketing ! J'ai hâte de travailler avec des clients de renom et de contribuer à leur succès.",
-    ashtag: ["#marketing", "#Accenture"],
+      "Je suis ravie de rejoindre l'équipe d'SocialCom en tant que consultante en marketing ! J'ai hâte de travailler avec des clients de renom et de contribuer à leur succès.",
+    ashtag: ["#marketing", "#SocialCom"],
     subject: "Nouvel emploi",
     comments: [
       {
@@ -432,31 +432,6 @@ const posts = {
         commentPicture: "src/content/profile2.png",
         commentText:
           "Bravo Sophie, je suis sûre que tu vas réussir chez Accenture !",
-        commentID: 2,
-      },
-    ],
-  },
-  18: {
-    id: 18,
-    name: "Jane Doe",
-    picture: "src/content/profile.png",
-    poste: "Etudiante",
-    company: "BeCode",
-    texte:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie felis quis purus maximus euismod. Vivamus diam nibh, tempor in dictum a, pretium vitae augue.",
-    ashtag: ["#study", "#skribble"],
-    subject: "Embauche",
-    comments: [
-      {
-        commentName: "John Doe",
-        commentPicture: "src/content/profile1.png",
-        commentText: "Hello baby",
-        commentID: 1,
-      },
-      {
-        commentName: "Jane Doe",
-        commentPicture: "src/content/profile2.png",
-        commentText: "Hi there!",
         commentID: 2,
       },
     ],

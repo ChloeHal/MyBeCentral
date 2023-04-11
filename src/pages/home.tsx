@@ -1,8 +1,7 @@
-import React from "react";
 import logo from "../content/logo.png";
 import back from "../content/newbackblue.png";
 import Button from "../component/Button/Button";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function Home() {
@@ -18,7 +17,7 @@ export default function Home() {
 
   const { t } = useTranslation();
   return (
-    <div
+    <section
       style={{ backgroundImage: `url(${back})` }}
       className="h-screen bg-whitish dark:bg-dark dark:text-whitish lg:bg-right bg-right-bottom max-w-full flex justify-center items-center flex-col bg-cover bg-no-repeat"
     >
@@ -45,6 +44,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

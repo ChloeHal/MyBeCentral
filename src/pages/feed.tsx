@@ -8,6 +8,7 @@ import Notification from "../component/Notification/Notification";
 import MessageInput from "../component/Post/MessageInput";
 import DragDrop from "../component/Drag&drop/Dragdrop";
 import GoBackTop from "../component/GoBackTop/GoBackTop";
+import profile from "../content/profile16.png";
 
 function Feed() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -103,7 +104,7 @@ function Feed() {
                 texte={post.texte}
                 ashtag={post.ashtag}
                 commentsProps={post.comments}
-                postAcommentProps={post.picture}
+                postAcommentProps={profile}
               />
             ))}
           </div>
@@ -125,7 +126,7 @@ function Feed() {
                 texte={post.texte}
                 ashtag={post.ashtag}
                 commentsProps={post.comments}
-                postAcommentProps={post.picture}
+                postAcommentProps={profile}
               />
             ))}
             <Notification
@@ -151,7 +152,7 @@ function Feed() {
                 texte={post.texte}
                 ashtag={post.ashtag}
                 commentsProps={post.comments}
-                postAcommentProps={post.picture}
+                postAcommentProps={profile}
               />
             ))}
             {noPost && matchingSomeFilters.length > 0 && (
