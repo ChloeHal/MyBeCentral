@@ -21,7 +21,7 @@ function DragDrop() {
       <div className="flex items-center justify-center w-full my-4">
         <label
           htmlFor="dropzone-file"
-          className="flex flex-col items-center justify-center w-full p-4 border-2  bg-transparent border-black border-dashed rounded-lg cursor-pointer hover:bg-grey"
+          className="flex flex-col items-center justify-center w-full p-4 border-2  bg-transparent border-black border-dashed rounded-lg cursor-pointer hover:bg-grey/30"
         >
           <div className="flex flex-col items-center justify-center pt-5 pb-6">
             <svg

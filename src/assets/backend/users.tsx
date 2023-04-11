@@ -64,7 +64,7 @@ const Users: Record<number, User> = {
     id: 5,
     firstname: "John",
     lastname: "Doe",
-    name: "JohnDoe",
+    name: "JamesDoe",
     picture: "src/content/profile3.png",
     poste: "Etudiante",
     company: "BeCode",

@@ -65,8 +65,8 @@ const companies: Record<number, Company> = {
   8: {
     id: 8,
     name: "CodeNplay",
-    picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/codenplay.webp",
+    picture: "/src/content/codenplayfond.jpg",
     description:
       "A school to understand robotics and computational thinking to creating code for kids between 6 & 12 years old.",
   },
@@ -74,7 +74,7 @@ const companies: Record<number, Company> = {
     id: 9,
     name: "Cool@School",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/cool@school.jpg",
     description:
       "NGO willing to help kids to develop their emotional and social intelligence",
   },
@@ -82,7 +82,7 @@ const companies: Record<number, Company> = {
     id: 10,
     name: "CWF",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/cwflogo.jpg",
     description:
       "A broad training program in the domains of the Cybersecurity Common Body of Knowledge to enable upskilling in information security competencies & career transitions into the field of Cybersecurity.",
   },
@@ -90,7 +90,7 @@ const companies: Record<number, Company> = {
     id: 11,
     name: "eqla",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/eqla.png",
     description:
       "A Belgian non-profit organization that provides information, advice, equipment and solutions to visually impaired people.",
   },
@@ -98,7 +98,7 @@ const companies: Record<number, Company> = {
     id: 12,
     name: "EducIT",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/educit.png",
     description:
       "An NGO aiming at helping public schools in Federation Wallonie Bruxelles to integrate digital in their program by training the teachers.",
   },
@@ -106,7 +106,7 @@ const companies: Record<number, Company> = {
     id: 13,
     name: "Google digitaal atelier",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/google.png",
     description:
       "Free training in digital marketing and personal coaching sessions.",
   },
@@ -114,14 +114,14 @@ const companies: Record<number, Company> = {
     id: 14,
     name: "Hack your future",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/hackfuture.jpg",
     description: "A 6-months coding school for refugees.",
   },
   15: {
     id: 15,
     name: "Khan Academy",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/khan.png",
     description:
       "Khan Academy is a non-profit providing online high-quality education to everyone, everywhere.",
   },
@@ -129,14 +129,14 @@ const companies: Record<number, Company> = {
     id: 16,
     name: "Le wagon",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/le-wagon-logo-vector.png",
     description: "A 9-weeks coding bootcamp for future entrepreneurs.",
   },
   17: {
     id: 17,
     name: "mediawijs",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/mediawijs.png",
     description:
       "Organization helping the citizens to use ICT and media consciously, critically, actively and creatively.",
   },
@@ -144,7 +144,7 @@ const companies: Record<number, Company> = {
     id: 18,
     name: "Orange Digital Center",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/orange.png",
     description:
       "Free digital and entrepreneurial training courses to promote innovation and strengthen your place in the labour market. From coding courses to financing start-ups and prototyping!",
   },
@@ -152,14 +152,14 @@ const companies: Record<number, Company> = {
     id: 19,
     name: "skills factory",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/skillsfactory.png",
     description: "Trainings to become a fully functionnal Digital Marketeer",
   },
   20: {
     id: 20,
     name: "Solvay",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/solvay.png",
     description:
       "Trainings to develop skills through executive and innovative management.",
   },
@@ -167,7 +167,7 @@ const companies: Record<number, Company> = {
     id: 21,
     name: "Switchfully",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/SWITCHFULLY.jpg",
     description:
       "Help their clients to fulfill their need for internal software developers. Together they select and train people to become full stack developer.",
   },
@@ -175,7 +175,7 @@ const companies: Record<number, Company> = {
     id: 22,
     name: "Teach for belgium",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/teachforbe.png",
     description:
       "Teach for Belgium is tackling the educational inequities by recruiting, training and supporting people to become inspiring teachers for vulnerable children",
   },
@@ -183,7 +183,7 @@ const companies: Record<number, Company> = {
     id: 23,
     name: "Techies Lab",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/TechiesLab.png",
     description:
       "Helping kids understand coding and robotics thanks to various workshops",
   },
@@ -191,7 +191,7 @@ const companies: Record<number, Company> = {
     id: 24,
     name: "Agence Digitale Solidaire",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/ADsolidaire.png",
     description:
       "Born during the lockdown, the Agence Digitale Solidaire helps merchants and freelances get online in an easier way at a cheaper price.",
   },
@@ -199,7 +199,7 @@ const companies: Record<number, Company> = {
     id: 25,
     name: "alan",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/alan.jpg",
     description:
       "Alan reinvented health insurance for a new generation: simple, transparent and digital.",
   },
@@ -207,7 +207,7 @@ const companies: Record<number, Company> = {
     id: 26,
     name: "AR#S",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/logoblack.png",
     description:
       "ARTTS proposes another way to look at art and how to make it more accessible, a new way to collect curated artworks through technology, by creating a bridge between the physical and digital worlds.",
   },
@@ -215,7 +215,7 @@ const companies: Record<number, Company> = {
     id: 27,
     name: "beAngels",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/beangels.png",
     description:
       "A business angel network active in Wallonia and the Brussels Region.",
   },
@@ -223,7 +223,7 @@ const companies: Record<number, Company> = {
     id: 28,
     name: "bundl",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/bundl.wepb",
     description:
       "Bundl is a venture development firm that leverages corporate assets to rapidly build new businesses into future revenue streams.",
   },
@@ -231,7 +231,7 @@ const companies: Record<number, Company> = {
     id: 29,
     name: "campfire",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/camp.png",
     description:
       "helps recreate the intimacy and trust of a campfire conversation by building intelligent conversational agents and developing engaging user experiences while gaining operational efficiency",
   },
@@ -239,7 +239,7 @@ const companies: Record<number, Company> = {
     id: 30,
     name: "clyde.and.bonnie",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/clyde.png",
     description:
       "Our digital marketing agency Clyde and Bonnie specializes in search engine optimization to help you be more - and better - visible on Google.",
   },
@@ -247,7 +247,7 @@ const companies: Record<number, Company> = {
     id: 31,
     name: "Curewiki",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/curewiki.png",
     description:
       "Access tomorrow's treatments today: Curewiki connects volunteers with the latest medical advances",
   },
@@ -255,7 +255,7 @@ const companies: Record<number, Company> = {
     id: 32,
     name: "d-teach",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/dteach.png",
     description:
       "Belgium’s first online school with almost a decade of experience in online teaching. This not-for-profit organization works towards internationalisation and re-integration by being a bridge organization",
   },
@@ -263,7 +263,7 @@ const companies: Record<number, Company> = {
     id: 33,
     name: "D4D HUB",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/dadhub.jpg",
     description:
       "A multi-stakeholder platform, established by the European Commission in 2020, enabling an ethical digital transformation.",
   },
@@ -271,7 +271,7 @@ const companies: Record<number, Company> = {
     id: 34,
     name: "DataPrep",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/dataprep.png",
     description:
       "Scale simple tasks that must be performed by humans in the context of AI.",
   },
@@ -279,7 +279,7 @@ const companies: Record<number, Company> = {
     id: 35,
     name: "FARI",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/fari.webp",
     description:
       "AI for the Common Good institute, hosted by VUB and ULB help citizens and organizations to understand and address how AI, Data & Robotics can help with every day or long term challenges.",
   },
@@ -287,7 +287,7 @@ const companies: Record<number, Company> = {
     id: 36,
     name: "flowchase",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/flow.png",
     description:
       "Flowchase is an EdTech start-up. They help English teachers boost their students' confidence and their pronunciation with voice technology.",
   },
@@ -295,7 +295,7 @@ const companies: Record<number, Company> = {
     id: 37,
     name: "Free Ukraine",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/freeuk.png",
     description:
       "An NGO created by Ukrainian and Belgian citizens with academic, legal and business experience. The founders include entrepreneurs, investors and NGO founders.",
   },
@@ -303,7 +303,7 @@ const companies: Record<number, Company> = {
     id: 38,
     name: "hub brussels",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/hub.jpg",
     description:
       "Helps you to develop your business in the Brussels region through advice by experts, personalized coaching, business coaching, export support and investment support.",
   },
@@ -311,7 +311,7 @@ const companies: Record<number, Company> = {
     id: 39,
     name: "inflights",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/inflight.png",
     description:
       "Access all aerial data and analytics in one platform to improve your business",
   },
@@ -319,7 +319,7 @@ const companies: Record<number, Company> = {
     id: 40,
     name: "M44",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/m44.jpg",
     description:
       "At M44 our mission is to Turn Panic into Magic. We use the combined power of marketing, storytelling and communication strategy to boldly impact our projects with innovation, inclusion and diversity. ",
   },
@@ -327,7 +327,7 @@ const companies: Record<number, Company> = {
     id: 41,
     name: "Mojo",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/logoblack.png",
     description:
       "Tackling the biggest challenges of our time, from fighting for social justice & human rights to gender equality & protecting our planet from the climate emergencies!",
   },
@@ -335,14 +335,14 @@ const companies: Record<number, Company> = {
     id: 42,
     name: "moon9",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/moon9.png",
     description: "Enhance your sexual life thanks to direct coaching",
   },
   43: {
     id: 43,
     name: "nextmo-ov",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/nextmoov.png",
     description:
       "A smart mobility digital agency helping actors dealing with mobility to build the best digital experiences.",
   },
@@ -350,7 +350,7 @@ const companies: Record<number, Company> = {
     id: 44,
     name: "nextORIGIN",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/nextorigi.png",
     description:
       "Explain, educate & integrate Artificial Intelligence to/in every organization.",
   },
@@ -358,7 +358,7 @@ const companies: Record<number, Company> = {
     id: 45,
     name: "NOSKUA",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/logoblack.png",
     description:
       "Noskua is a tech startup focused on simplifying event marketing, with TUKIOO as its flagship product",
   },
@@ -366,15 +366,15 @@ const companies: Record<number, Company> = {
     id: 46,
     name: "Outsight Studio",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/outsight.jpg",
     description:
       "We empower companies to add significant value to their digital products while reducing their development effort.",
   },
   47: {
     id: 47,
-    name: "redpencil.io",
+    name: "redpencil",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/redpio.svg",
     description:
       "redpencil.io helps you solve complex data problems with rich web applications.",
   },
@@ -382,14 +382,14 @@ const companies: Record<number, Company> = {
     id: 48,
     name: "RingTwice",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/ringT.webp",
     description: "A Startup connecting individuals and service suppliers.",
   },
   49: {
     id: 49,
     name: "Rosa",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/logoblack.png",
     description:
       "Rosa’s mission is to help people live longer and better lives, by developing a patient app.",
   },
@@ -397,7 +397,7 @@ const companies: Record<number, Company> = {
     id: 50,
     name: "SCALEFUND",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/scalefund.png",
     description:
       "ScaleFund is a post-business angel / pre-venture capital fund mainly operating across Belgium",
   },
@@ -405,14 +405,14 @@ const companies: Record<number, Company> = {
     id: 51,
     name: "simple Backups",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/simplebackups.png",
     description: "Allows you to automate all your server and database backups.",
   },
   52: {
     id: 52,
     name: "skipr",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/skipr.png",
     description:
       "Skipr supports companies in their transition towards a more sustainable mobility for their employees.",
   },
@@ -420,7 +420,7 @@ const companies: Record<number, Company> = {
     id: 53,
     name: "SocialCom",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/logoblack.png",
     description:
       "Since 2013, socialcom has been supporting local businesses by providing them impactful content with quantifiable results.",
   },
@@ -428,7 +428,7 @@ const companies: Record<number, Company> = {
     id: 54,
     name: "sortlist",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/sortlist.png",
     description:
       "A scaleup introducing companies to reliable marketing and advertisement agencies.",
   },
@@ -436,14 +436,14 @@ const companies: Record<number, Company> = {
     id: 55,
     name: "startup factory",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/startupfactory.png",
     description: "Launching ventures with talented first time entrepreneurs.",
   },
   56: {
     id: 56,
     name: "Stooml-nk.",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/stoom.png",
     description:
       "Stoomlink builds digital products for greener mobility. We help companies and cities seize the many opportunities green mobility offers - thanks to big data served in the most handsome way.",
   },
@@ -451,7 +451,7 @@ const companies: Record<number, Company> = {
     id: 57,
     name: "sustAIn.brussels",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/logoblack.png",
     description:
       "SustAIn.brussels is the single point of contact for companies that want to grow their digital and sustainable ambitions.",
   },
@@ -459,7 +459,7 @@ const companies: Record<number, Company> = {
     id: 58,
     name: "tech eu",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/techeu.png",
     description:
       "The premier source of European technology news, data and market intelligence, providing unprecedented insights into the tech startup, investment, M&A and IPO activity across Europe.",
   },
@@ -467,14 +467,14 @@ const companies: Record<number, Company> = {
     id: 59,
     name: "TYREL",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/logoblack.png",
     description: "Your partner for the creation of Modern Data Platforms",
   },
   60: {
     id: 60,
     name: "UNBLND",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/unblnd.webp",
     description:
       "UNBLND is a privacy-friendly social network that connects anonymous people into groups with via a matchmaking algorithm based on interests, preferred activities and location.",
   },
@@ -482,7 +482,7 @@ const companies: Record<number, Company> = {
     id: 61,
     name: "Valkuren",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/valku.png",
     description:
       "Specialized in Big Data Solutions Development with Data Goveranance, Data Analytics & AI services helping companies leverage their business performance, improve decision-making & optimize processes",
   },
@@ -490,7 +490,7 @@ const companies: Record<number, Company> = {
     id: 62,
     name: "zerocopy",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/zerocopy.png",
     description:
       "Startup providing students free printing services by including advertisements on the documents.",
   },
@@ -498,7 +498,7 @@ const companies: Record<number, Company> = {
     id: 63,
     name: "ALLIED FOR STARTUPS",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/allied.png",
     description:
       "A worldwide network of advocacy organizations focusing on improving the policy environment for Startups.",
   },
@@ -506,7 +506,7 @@ const companies: Record<number, Company> = {
     id: 64,
     name: "The Democratic Society",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/Demsoc.png",
     description:
       "A non-partisan membership organisation for democracy, participation and new ways of doing government.",
   },
@@ -514,7 +514,7 @@ const companies: Record<number, Company> = {
     id: 65,
     name: "Ecas",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/ecas.png",
     description:
       "The European Citizen Action Service (ECAS) is a pan-European non-profit organisation which promotes citizens’ rights, and citizens’ engagement through innovation at all levels.",
   },
@@ -522,7 +522,7 @@ const companies: Record<number, Company> = {
     id: 66,
     name: "ESN",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/esn.png",
     description:
       "Association created to unify European Startups and allow more initiatives to start, scale and grow in the EU.",
   },
@@ -530,7 +530,7 @@ const companies: Record<number, Company> = {
     id: 67,
     name: "King Baudouin Foundation",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/king.png",
     description:
       "The King Baudouin Foundation's mission is to contribute to a better society in Belgium, in Europe and in the world.",
   },
@@ -538,7 +538,7 @@ const companies: Record<number, Company> = {
     id: 68,
     name: "open knowledge belgium",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/Openknow.png",
     description:
       "Is all about opennes and using advocacy, research, technology and projects to unlock information, enabling people to use and share knowledge.",
   },
@@ -546,7 +546,7 @@ const companies: Record<number, Company> = {
     id: 69,
     name: "We tech care",
     picture: "/src/content/generalbg.jpg",
-    logo: "/src/content/becode.png",
+    logo: "/src/content/wetech.png",
     description:
       "Tackling the digital gap and providing easy internet access to the less fortunate",
   },

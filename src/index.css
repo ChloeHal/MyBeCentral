@@ -13,6 +13,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
+  background-clip: text; /* make the background transparent */
   border-bottom: 1px solid rgb(0, 0, 0);
   -webkit-text-fill-color: #170f1d;
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
@@ -21,6 +22,7 @@ select:-webkit-autofill:focus {
   color: #170f1d;
   --tw-border-opacity: 1;
 }
+
 input:checked + div {
   border: solid #06d6a0 2px;
   background-color: rgba(0, 0, 0, 0);

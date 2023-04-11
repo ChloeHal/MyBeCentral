@@ -26,5 +26,6 @@
   "companychoice.label": "Select your company",
   "404.label": "Something went wrong...",
   "404p.label": "Click below to go back to the last page",
-  "goback.label": "Go back"
+  "goback.label": "Go back",
+  "save.label": "Save"
 }

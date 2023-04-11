@@ -48,7 +48,7 @@ const User: React.FC = () => {
             <img src={logo} className="object-cover w-1/3 sm:w-1/4" />
 
             <div className="flex flex-col px-4 justify-center h-full md:text-xl">
-              <h1>Pépé PHP</h1>
+              <h1>Mémé PHP</h1>
               <p>BeCode</p>
             </div>
           </div>

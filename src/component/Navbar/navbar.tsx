@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../content/logowhite.svg";
-import profile from "../../content/profile12.png";
+import profile from "../../content/profile16.png";
 import { Link } from "react-router-dom"; // importez Link depuis react-router-dom
 import SearchBar from "../../component/Searchbar/searchbar";
 const Navbar: React.FC = () => {
