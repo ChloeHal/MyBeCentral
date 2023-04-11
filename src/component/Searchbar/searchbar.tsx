@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog, Transition, Tab } from "@headlessui/react";
 import Search from "../../content/search.svg";
 import users from "../../assets/backend/users";
-
+import companies from "../../assets/backend/companies";
 interface User {
   id: number;
   firstname: string;
@@ -12,34 +12,42 @@ interface User {
   company: string;
   description: string;
 }
+interface Company {
+  id: number;
+  name: string;
+  picture: string;
+  logo: string;
+  description: string;
+}
 const userArray = Object.values(users) as User[];
-
+const companyArray = Object.values(companies) as Company[];
 const SearchBar: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState<User[]>([]);
+  const [searchResults, setSearchResults] = useState<{
+    users: Array<User>;
+    companies: Array<Company>;
+  }>({ users: [], companies: [] });
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
-
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      // Effectuez la recherche ici et mettez à jour searchResults
-      const results = userArray.filter(
+      const userResults = userArray.filter(
         (user: User) =>
           user.firstname.toLowerCase().includes(searchTerm.toLowerCase()) ||
           user.lastname.toLowerCase().includes(searchTerm.toLowerCase()) ||
           user.poste.toLowerCase().includes(searchTerm.toLowerCase()) ||
           user.company.toLowerCase().includes(searchTerm.toLowerCase())
       );
-
-      setSearchResults(results);
+      const companyResults = companyArray.filter((company: Company) =>
+        company.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setSearchResults({ users: userResults, companies: companyResults });
       setIsModalOpen(true);
     }
   };
-
   return (
     <>
       <form className="flex items-center justify-end flex-1 cursor-text">
@@ -101,35 +109,72 @@ const SearchBar: React.FC = () => {
                 >
                   Résultats de la recherche
                 </Dialog.Title>
-                <div className="mt-2 ">
-                  {searchResults.length === 0 ? (
-                    <p className="text-sm text-dark dark:text-whitish">
-                      Aucun résultat trouvé.
-                    </p>
-                  ) : (
-                    <ul className="space-y-8 scroll-y-auto">
-                      {searchResults.map((result) => (
-                        <li
-                          key={result.id}
-                          className="text-sm text-gray-700 dark:text-whitish"
-                        >
-                          <a
-                            href={`profile/${result.firstname}${result.lastname}`}
-                            className="bg-darkless rounded-md pl-2 pr-4 py-3"
-                          >
-                            <img
-                              src={result.picture}
-                              className="inline-block w-8 h-8 rounded-full mr-2 object-cover"
-                              alt="Photo de profil miniature"
-                            />
-                            {result.firstname} {result.lastname} -{" "}
-                            {result.poste} chez {result.company}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+                <Tab.Group>
+                  <Tab.List>
+                    <Tab>Utilisateurs</Tab>
+                    <Tab>Compagnies</Tab>
+                  </Tab.List>
+                  <Tab.Panels>
+                    <Tab.Panel>
+                      {searchResults.users.length === 0 ? (
+                        <p className="text-sm text-dark dark:text-whitish">
+                          Aucun utilisateur trouvé.
+                        </p>
+                      ) : (
+                        <ul className="space-y-8 scroll-y-auto">
+                          {searchResults.users.map((result) => (
+                            <li
+                              key={result.id}
+                              className="text-sm text-gray-700 dark:text-whitish"
+                            >
+                              <a
+                                href={`profile/${result.firstname}${result.lastname}`}
+                                className="dark:bg-darkless rounded-md pl-2 pr-4 py-3"
+                              >
+                                <img
+                                  src={result.picture}
+                                  className="inline-block w-8 h-8 rounded-full mr-2 object-cover"
+                                  alt="Photo de profil miniature"
+                                />
+                                {result.firstname} {result.lastname} -{" "}
+                                {result.poste} chez {result.company}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </Tab.Panel>
+                    <Tab.Panel>
+                      {/* Afficher les résultats de recherche pour les entreprises */}
+                      {searchResults.companies.length === 0 ? (
+                        <p className="text-sm text-dark dark:text-whitish">
+                          Aucune compagnie trouvée.
+                        </p>
+                      ) : (
+                        <ul className="space-y-8 scroll-y-auto">
+                          {searchResults.companies.map((result) => (
+                            <li
+                              key={result.id}
+                              className="text-sm text-gray-700 dark:text-whitish"
+                            >
+                              <a
+                                href={`company/${result.name}`}
+                                className="dark:bg-darkless rounded-md pl-2 pr-4 py-3"
+                              >
+                                <img
+                                  src={result.logo}
+                                  className="inline-block w-8 h-8 rounded-full mr-2 object-cover"
+                                  alt="Logo de l'entreprise"
+                                />
+                                {result.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </Tab.Panel>
+                  </Tab.Panels>
+                </Tab.Group>
 
                 <div className="mt-4">
                   <button
