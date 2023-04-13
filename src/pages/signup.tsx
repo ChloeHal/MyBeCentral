@@ -2,21 +2,21 @@ import React, { ChangeEvent, useState } from "react";
 import Button from "../component/Button/Button";
 import Input from "../component/Input/Input";
 import { useNavigate } from "react-router-dom";
-import Notification from "../component/Notification/Notification"; // import the Notification component
+import Notification from "../component/Notification/Notification";
 import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
 import companies from "../assets/backend/companies";
+import axios from "axios";
 
 function SignUp() {
-  Object.values(companies).map((company) => console.log(company.name));
+  // Object.values(companies).map((company) => console.log(company.name));
   const navigateFeed = () => {
     navigate("/feed");
   };
   const navigateLogin = () => {
     navigate("/login");
   };
-  const { t } = useTranslation();
   const [isNotificationVisible, setIsNotificationVisible] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -29,44 +29,55 @@ function SignUp() {
     repeatPassword: "",
     privacy: false,
   });
+
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setLoginFormData((prevData) => ({ ...prevData, [name]: value }));
-    console.log(loginFormData);
+    
   };
+
   const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
     setLoginFormData((prevData) => ({ ...prevData, company: value }));
-    console.log(loginFormData);
+
   };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    //e.preventDefault();
-    console.log(loginFormData);
-    // fetch("http://localhost:3000/signin", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "application/json",
-    //     "Access-Control-Allow-Origin": "*",
-    //   },
-    //   body: JSON.stringify({
-    //     email: loginFormData.email,
-    //     password: loginFormData.password,
-    //   }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data, "user");
-    //     if (!data.error) {
-    //       setIsLoggedIn(true);
-    //       localStorage.setItem("user", JSON.stringify(data));
-    //       navigate("/");
-    //     } else {
-    //       setIsNotificationVisible(true);
-    //       setErrorMessage(data.error);
-    //     }
-    //   });
+    e.preventDefault();
+
+    // const {
+    //   firstName,
+    //   lastName,
+    //   email,
+    //   company,
+    //   password,
+    //   repeatPassword,
+    // } = loginFormData;
+
+    axios
+      .post("http://localhost:8081/api/v1/save", {
+        // email,
+        // password,
+        // repeatPassword,
+        // firstName,
+        // lastName,
+        // company,
+        loginFormData
+      })
+      .then((res) => {
+        console.log(res.data, "userRegister");
+        setIsLoggedIn(true);
+      })
+      .catch((error) => {
+        console.error(error);
+        alert(
+          "An error occurred while submitting the form. Please try again later."
+        );
+      });
   };
 
   return (
