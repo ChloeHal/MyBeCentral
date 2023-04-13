@@ -22,9 +22,8 @@ Using a combination of:
 ## What does it look like?
 
 Like this:
-
-| Colonne 1     | Colonne 2     | Colonne 3     |
-| ------------- | ------------- | ------------- |
-| Cellule 1 | Cellule 2 | Cellule 3 |
-| Cellule 4     | Cellule 5     | Cellule 6     |
+| ![image](./src/content/screenshots/login.png) | ![image](./src/content/screenshots/home.png) |
+| ------------- | ------------- |
+| ![image](./src/content/screenshots/homeblack.png) | ![image](./src/content/screenshots/post.png) |
+| ![image](./src/content/screenshots/search.png) | ![image](./src/content/screenshots/profile.png) |
 
