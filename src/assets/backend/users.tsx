@@ -63,7 +63,7 @@ const Users: Record<number, User> = {
   },
   5: {
     id: 5,
-    firstname: "James",
+    firstname: "John",
     lastname: "Doe",
     name: "JamesDoe",
     picture: "src/content/profile3.png",
