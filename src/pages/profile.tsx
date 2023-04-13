@@ -62,7 +62,7 @@ function Profile() {
     <div className="h-screen flex items-center justify-center relative bg-whitish dark:bg-dark dark:text-whitish">
       <RoundButton
         clickHandler={handleButtonClick}
-        classname="absolute z-50 w-16 h-16 bg-pink md:w-20 md:h-20 shadow-xl"
+        classname="absolute z-50 w-16 h-16 bg-pink lg:w-20 lg:h-20 shadow-xl"
         color=""
         svg={
           <img src={heart} className={color ? "hidden" : "w-1/2 dark:invert"} />
@@ -84,11 +84,11 @@ function Profile() {
           style={{ backgroundImage: `url(${back})` }}
           className="h-1/2 flex flex-col bg-center bg-cover justify-center items-center relative lg:w-1/2 lg:h-full"
         >
-          <div className="flex flex-row my-4">
-            <p className="text-center px-4 md:text-2xl">
+          <div className="flex flex-row w-full justify-between md:justify-around">
+            <p className="text-center px-6 md:text-xl">
               {user.followers} followers
             </p>
-            <p className="text-center px-4 md:text-2xl">
+            <p className="text-center px-6 md:text-xl">
               {user.following.length} follows
             </p>
           </div>
@@ -105,7 +105,7 @@ function Profile() {
               <p>{user.company}</p>
             </div>
           </div>
-          <div className="my-4 overflow-y-auto mx-6 md:w-2/3 md:text-l">
+          <div className="my-4 overflow-y-auto mx-6 md:w-2/3 md:text-lg scrollbar-thin scrollbar-track-transparent px-4 scrollbar-thumb-black">
             <p className="text-center">{user.description}</p>
           </div>
         </div>
