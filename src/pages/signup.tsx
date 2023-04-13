@@ -7,11 +7,13 @@ import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
 import companies from "../assets/backend/companies";
+
 declare namespace JSX {
   interface IntrinsicElements {
     [elemName: string]: any;
   }
 }
+
 function SignUp() {
   const navigateFeed = () => {
     navigate("/feed");
@@ -45,12 +47,26 @@ function SignUp() {
     const { value } = event.target;
     setLoginFormData((prevData) => ({ ...prevData, company: value }));
   };
-
+  // axios
+  //   .post("http://localhost:8081/api/v1/user/save", {
+  //     loginFormData,
+  //   })
+  //   .then((res: any) => {
+  //     console.log(res.data, "userRegister");
+  //     setIsLoggedIn(true);
+  //   })
+  //   .catch((error: any) => {
+  //     console.error(error);
+  //     alert(
+  //       "An error occurred while submitting the form. Please try again later."
+  //     );
+  //   });
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (loginFormData.password != loginFormData.repeatPassword) {
       alert("Password don't match repeat password");
     } else {
+
         // axios
   //   .post("http://localhost:8081/api/v1/user/save", {
   //     loginFormData,
@@ -70,6 +86,7 @@ function SignUp() {
         body: JSON.stringify(
           loginFormData
         ),
+
         headers: {
           "Content-type": "application/json; charset=UTF-8",
         },
@@ -182,6 +199,7 @@ function SignUp() {
             color="teal"
             name={t("signUp.label")}
             type="submit"
+
             clickHandler = {()=>{console.log(loginFormData); handleSubmit}}
           />
           <Button

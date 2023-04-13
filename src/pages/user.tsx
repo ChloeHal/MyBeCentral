@@ -21,7 +21,7 @@ const User: React.FC = () => {
     <div className="h-screen flex items-center justify-center relative bg-whitish">
       <RoundButton
         clickHandler={navigateEdit}
-        classname="absolute z-50 w-16 h-16 bg-blue md:w-20 md:h-20 shadow-xl"
+        classname="absolute z-50 w-16 h-16 bg-blue lg:w-20 lg:h-20 shadow-xl"
         color=""
         svg={<img src={edit} className="w-1/2 dark:invert" />}
       />
@@ -52,7 +52,7 @@ const User: React.FC = () => {
               <p>BeCode</p>
             </div>
           </div>
-          <div className="my-4 overflow-y-auto mx-6 md:w-2/3 md:text-l">
+          <div className="my-4 overflow-y-auto mx-6 md:w-2/3 md:text-lg scrollbar-thin scrollbar-track-transparent px-4 scrollbar-thumb-black">
             <p className="text-center">
               Lorem ipsum dolor sit amet. Hic ipsam fugit et sunt ullam aut enim
               quis non voluptas asperiores et accusantium sint. Id accusantium
