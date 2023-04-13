@@ -1,4 +1,11 @@
-const companies = {
+interface Company {
+  id: number;
+  name: string;
+  picture: string;
+  logo: string;
+  description: string;
+}
+const companies: Record<number, Company> = {
   1: {
     id: 1,
     name: "19",
