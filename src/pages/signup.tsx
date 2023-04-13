@@ -7,6 +7,13 @@ import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
 import companies from "../assets/backend/companies";
+
+declare namespace JSX {
+  interface IntrinsicElements {
+    [elemName: string]: any;
+  }
+}
+
 function SignUp() {
   const navigateFeed = () => {
     navigate("/feed");
@@ -59,11 +66,27 @@ function SignUp() {
     if (loginFormData.password != loginFormData.repeatPassword) {
       alert("Password don't match repeat password");
     } else {
+
+        // axios
+  //   .post("http://localhost:8081/api/v1/user/save", {
+  //     loginFormData,
+  //   })
+  //   .then((res: any) => {
+  //     console.log(res.data, "userRegister");
+  //     setIsLoggedIn(true);
+  //   })
+  //   .catch((error: any) => {
+  //     console.error(error);
+  //     alert(
+  //       "An error occurred while submitting the form. Please try again later."
+  //     );
+  //   });
       fetch("http://localhost:8081/api/v1/user/save", {
         method: "POST",
-        body: JSON.stringify({
-          loginFormData,
-        }),
+        body: JSON.stringify(
+          loginFormData
+        ),
+
         headers: {
           "Content-type": "application/json; charset=UTF-8",
         },
@@ -176,7 +199,8 @@ function SignUp() {
             color="teal"
             name={t("signUp.label")}
             type="submit"
-            clickHandler={handleSubmit}
+
+            clickHandler = {()=>{console.log(loginFormData); handleSubmit}}
           />
           <Button
             color="black"
