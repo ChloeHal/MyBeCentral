@@ -7,10 +7,12 @@ import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
 import companies from "../assets/backend/companies";
-import axios from "axios";
-
+declare namespace JSX {
+  interface IntrinsicElements {
+    [elemName: string]: any;
+  }
+}
 function SignUp() {
-  // Object.values(companies).map((company) => console.log(company.name));
   const navigateFeed = () => {
     navigate("/feed");
   };
@@ -37,47 +39,49 @@ function SignUp() {
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setLoginFormData((prevData) => ({ ...prevData, [name]: value }));
-    
   };
 
   const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
     setLoginFormData((prevData) => ({ ...prevData, company: value }));
-
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // const {
-    //   firstName,
-    //   lastName,
-    //   email,
-    //   company,
-    //   password,
-    //   repeatPassword,
-    // } = loginFormData;
-
-    axios
-      .post("http://localhost:8081/api/v1/save", {
-        // email,
-        // password,
-        // repeatPassword,
-        // firstName,
-        // lastName,
-        // company,
-        loginFormData
+    if (loginFormData.password != loginFormData.repeatPassword) {
+      alert("Password don't match repeat password");
+    } else {
+        // axios
+  //   .post("http://localhost:8081/api/v1/user/save", {
+  //     loginFormData,
+  //   })
+  //   .then((res: any) => {
+  //     console.log(res.data, "userRegister");
+  //     setIsLoggedIn(true);
+  //   })
+  //   .catch((error: any) => {
+  //     console.error(error);
+  //     alert(
+  //       "An error occurred while submitting the form. Please try again later."
+  //     );
+  //   });
+      fetch("http://localhost:8081/api/v1/user/save", {
+        method: "POST",
+        body: JSON.stringify(
+          loginFormData
+        ),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
       })
-      .then((res) => {
-        console.log(res.data, "userRegister");
-        setIsLoggedIn(true);
-      })
-      .catch((error) => {
-        console.error(error);
-        alert(
-          "An error occurred while submitting the form. Please try again later."
-        );
-      });
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          console.log(data);
+        })
+        .catch((error) => console.error("Error:", error));
+    }
   };
 
   return (
@@ -110,13 +114,6 @@ function SignUp() {
           value={loginFormData.email}
           onChange={handleInputChange}
         />
-        {/* <Input
-          type="text"
-          name="company"
-          label={t("company.label")}
-          value={loginFormData.company}
-          onChange={handleInputChange}
-        /> */}
         <label htmlFor="underline_select" className="sr-only">
           Underline select
         </label>
@@ -184,16 +181,13 @@ function SignUp() {
           <Button
             color="teal"
             name={t("signUp.label")}
-            type="button"
-            clickHandler={() => {
-              console.log(loginFormData);
-              navigateFeed();
-            }}
+            type="submit"
+            clickHandler = {()=>{console.log(loginFormData); handleSubmit}}
           />
           <Button
             color="black"
             name={t("login.label")}
-            type="submit"
+            type="button"
             clickHandler={navigateLogin}
           />
         </div>
