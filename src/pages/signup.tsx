@@ -47,55 +47,22 @@ function SignUp() {
     const { value } = event.target;
     setLoginFormData((prevData) => ({ ...prevData, company: value }));
   };
-  // axios
-  //   .post("http://localhost:8081/api/v1/user/save", {
-  //     loginFormData,
-  //   })
-  //   .then((res: any) => {
-  //     console.log(res.data, "userRegister");
-  //     setIsLoggedIn(true);
-  //   })
-  //   .catch((error: any) => {
-  //     console.error(error);
-  //     alert(
-  //       "An error occurred while submitting the form. Please try again later."
-  //     );
-  //   });
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (loginFormData.password != loginFormData.repeatPassword) {
       alert("Password don't match repeat password");
     } else {
-
-        // axios
-  //   .post("http://localhost:8081/api/v1/user/save", {
-  //     loginFormData,
-  //   })
-  //   .then((res: any) => {
-  //     console.log(res.data, "userRegister");
-  //     setIsLoggedIn(true);
-  //   })
-  //   .catch((error: any) => {
-  //     console.error(error);
-  //     alert(
-  //       "An error occurred while submitting the form. Please try again later."
-  //     );
-  //   });
       fetch("http://localhost:8081/api/v1/user/save", {
         method: "POST",
-        body: JSON.stringify(
-          loginFormData
-        ),
+        body: JSON.stringify(loginFormData),
 
         headers: {
           "Content-type": "application/json; charset=UTF-8",
         },
       })
         .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          console.log(data);
+          navigateFeed();
         })
         .catch((error) => console.error("Error:", error));
     }
@@ -199,8 +166,10 @@ function SignUp() {
             color="teal"
             name={t("signUp.label")}
             type="submit"
-
-            clickHandler = {()=>{console.log(loginFormData); handleSubmit}}
+            clickHandler={() => {
+              console.log(loginFormData);
+              handleSubmit;
+            }}
           />
           <Button
             color="black"
