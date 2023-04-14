@@ -8,12 +8,6 @@ import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
 import companies from "../assets/backend/companies";
 
-declare namespace JSX {
-  interface IntrinsicElements {
-    [elemName: string]: any;
-  }
-}
-
 function SignUp() {
   const navigateFeed = () => {
     navigate("/feed");
@@ -51,7 +45,19 @@ function SignUp() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (loginFormData.password != loginFormData.repeatPassword) {
-      alert("Password don't match repeat password");
+      setErrorMessage(t("passworderror.label") as string);
+      setIsNotificationVisible(true);
+    } else if (
+      loginFormData.company === "" ||
+      loginFormData.email === "" ||
+      loginFormData.firstName === "" ||
+      loginFormData.lastName === "" ||
+      loginFormData.password === "" ||
+      loginFormData.repeatPassword === "" ||
+      loginFormData.privacy === false
+    ) {
+      setErrorMessage(t("uncomplete.label") as string);
+      setIsNotificationVisible(true);
     } else {
       fetch("http://localhost:8081/api/v1/user/save", {
         method: "POST",
@@ -64,7 +70,11 @@ function SignUp() {
         .then(function (response) {
           navigateFeed();
         })
-        .catch((error) => console.error("Error:", error));
+        .catch((error) => {
+          console.error("Error:", error);
+          setErrorMessage(error);
+          setIsNotificationVisible(true);
+        });
     }
   };
 
@@ -181,12 +191,11 @@ function SignUp() {
       </form>
 
       {isNotificationVisible ? (
-        <Notification title="Error" text={errorMessage} />
+        <Notification title={t("error.label")} text={errorMessage} />
       ) : (
         <></>
       )}
     </section>
   );
 }
-
 export default SignUp;

@@ -27,5 +27,8 @@
   "404.label": "Something went wrong...",
   "404p.label": "Click below to go back to the last page",
   "goback.label": "Go back",
-  "save.label": "Save"
+  "save.label": "Save",
+  "error.label": "Error",
+  "passworderror.label": "Password don't match repeat password",
+  "uncomplete.label": "All fields of the form must be completed"
 }
