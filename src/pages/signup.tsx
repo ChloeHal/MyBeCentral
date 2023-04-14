@@ -72,7 +72,7 @@ function SignUp() {
         })
         .catch((error) => {
           console.error("Error:", error);
-          setErrorMessage(error);
+          setErrorMessage(t("servererror.label") as string);
           setIsNotificationVisible(true);
         });
     }

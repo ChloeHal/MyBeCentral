@@ -30,5 +30,6 @@
   "save.label": "Sauvegarder",
   "error.label": "Erreur",
   "passworderror.label": "Le mot de passe et la répétition du mot de passe ne sont pas identiques",
-  "uncomplete.label": "Tous les champs du formulaire doivent être remplis"
+  "uncomplete.label": "Tous les champs du formulaire doivent être remplis",
+  "servererror.label": "Il y à eu une erreur lors de l'envoi du formulaire, veuillez réessayer plus tard."
 }

@@ -30,5 +30,6 @@
   "save.label": "Save",
   "error.label": "Error",
   "passworderror.label": "Password don't match repeat password",
-  "uncomplete.label": "All fields of the form must be completed"
+  "uncomplete.label": "All fields of the form must be completed",
+  "servererror.label": "There was an error while submitting the form. Please try again later"
 }
