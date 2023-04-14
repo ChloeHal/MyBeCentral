@@ -12,13 +12,13 @@ const posts = {
     comments: [
       {
         commentName: "John Doe",
-        commentPicture: "src/content/profile2.png",
+        commentPicture: "src/content/profile3.png",
         commentText: "Félicitations Jane!",
         commentID: 1,
       },
       {
         commentName: "Jane Doe",
-        commentPicture: "src/content/profile3.png",
+        commentPicture: "src/content/profile2.png",
         commentText: "Bonne chance pour cette nouvelle aventure!",
         commentID: 2,
       },
@@ -395,14 +395,14 @@ const posts = {
     comments: [
       {
         commentName: "John Doe",
-        commentPicture: "src/content/profile13.png",
+        commentPicture: "src/content/profile14.png",
         commentText:
           "Salut Alexandre, je vais peut-être avoir un projet pour toi bientôt !",
         commentID: 1,
       },
       {
         commentName: "Jane Doe",
-        commentPicture: "src/content/profile14.png",
+        commentPicture: "src/content/profile13.png",
         commentText:
           "Je te recommande à mes contacts qui cherchent un développeur web, bonne chance !",
         commentID: 2,

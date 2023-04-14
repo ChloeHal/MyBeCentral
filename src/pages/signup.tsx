@@ -8,12 +8,6 @@ import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
 import companies from "../assets/backend/companies";
 
-declare namespace JSX {
-  interface IntrinsicElements {
-    [elemName: string]: any;
-  }
-}
-
 function SignUp() {
   const navigateFeed = () => {
     navigate("/feed");
@@ -47,57 +41,40 @@ function SignUp() {
     const { value } = event.target;
     setLoginFormData((prevData) => ({ ...prevData, company: value }));
   };
-  // axios
-  //   .post("http://localhost:8081/api/v1/user/save", {
-  //     loginFormData,
-  //   })
-  //   .then((res: any) => {
-  //     console.log(res.data, "userRegister");
-  //     setIsLoggedIn(true);
-  //   })
-  //   .catch((error: any) => {
-  //     console.error(error);
-  //     alert(
-  //       "An error occurred while submitting the form. Please try again later."
-  //     );
-  //   });
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (loginFormData.password != loginFormData.repeatPassword) {
-      alert("Password don't match repeat password");
+      setErrorMessage(t("passworderror.label") as string);
+      setIsNotificationVisible(true);
+    } else if (
+      loginFormData.company === "" ||
+      loginFormData.email === "" ||
+      loginFormData.firstName === "" ||
+      loginFormData.lastName === "" ||
+      loginFormData.password === "" ||
+      loginFormData.repeatPassword === "" ||
+      loginFormData.privacy === false
+    ) {
+      setErrorMessage(t("uncomplete.label") as string);
+      setIsNotificationVisible(true);
     } else {
-
-        // axios
-  //   .post("http://localhost:8081/api/v1/user/save", {
-  //     loginFormData,
-  //   })
-  //   .then((res: any) => {
-  //     console.log(res.data, "userRegister");
-  //     setIsLoggedIn(true);
-  //   })
-  //   .catch((error: any) => {
-  //     console.error(error);
-  //     alert(
-  //       "An error occurred while submitting the form. Please try again later."
-  //     );
-  //   });
       fetch("http://localhost:8081/api/v1/user/save", {
         method: "POST",
-        body: JSON.stringify(
-          loginFormData
-        ),
+        body: JSON.stringify(loginFormData),
 
         headers: {
           "Content-type": "application/json; charset=UTF-8",
         },
       })
         .then(function (response) {
-          return response.json();
+          navigateFeed();
         })
-        .then(function (data) {
-          console.log(data);
-        })
-        .catch((error) => console.error("Error:", error));
+        .catch((error) => {
+          console.error("Error:", error);
+          setErrorMessage(t("servererror.label") as string);
+          setIsNotificationVisible(true);
+        });
     }
   };
 
@@ -199,8 +176,10 @@ function SignUp() {
             color="teal"
             name={t("signUp.label")}
             type="submit"
-
-            clickHandler = {()=>{console.log(loginFormData); handleSubmit}}
+            clickHandler={() => {
+              console.log(loginFormData);
+              handleSubmit;
+            }}
           />
           <Button
             color="black"
@@ -212,12 +191,11 @@ function SignUp() {
       </form>
 
       {isNotificationVisible ? (
-        <Notification title="Error" text={errorMessage} />
+        <Notification title={t("error.label")} text={errorMessage} />
       ) : (
         <></>
       )}
     </section>
   );
 }
-
 export default SignUp;

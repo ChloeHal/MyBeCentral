@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
       <SearchBar />
       <Link to="/user">
         <img
-          className="inline-block h-9 w-9 m-2 lg:m-3 xl:m-4 2xl:m-5 rounded-full"
+          className="inline-block h-9 w-9 m-2 lg:m-3 xl:m-4 2xl:m-5 rounded-full object-cover"
           src={profile}
           alt="John Doe's profile"
         />

@@ -37,30 +37,25 @@ function Login() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(loginFormData);
-    // fetch("http://localhost:3000/signin", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "application/json",
-    //     "Access-Control-Allow-Origin": "*",
-    //   },
-    //   body: JSON.stringify({
-    //     email: loginFormData.email,
-    //     password: loginFormData.password,
-    //   }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data, "user");
-    //     if (!data.error) {
-    //       setIsLoggedIn(true);
-    //       localStorage.setItem("user", JSON.stringify(data));
-    //       navigate("/");
-    //     } else {
-    //       setIsNotificationVisible(true);
-    //       setErrorMessage(data.error);
-    //     }
-    //   });
+    fetch("http://localhost:8081/api/v1/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginFormData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "user");
+        if (!data.error) {
+          setIsLoggedIn(true);
+          localStorage.setItem("user", JSON.stringify(data));
+          navigate("/feed");
+        } else {
+          setIsNotificationVisible(true);
+          setErrorMessage(data.error);
+        }
+      });
   };
 
   return (
@@ -91,14 +86,13 @@ function Login() {
             color="black"
             name={t("login.label")}
             type="submit"
-            clickHandler={navigateFeed}
+            clickHandler={() => handleSubmit}
           />
           <Button
             color="teal"
             name={t("signUp.label")}
             type="button"
             clickHandler={() => {
-              console.log(loginFormData);
               navigateSignUp();
             }}
           />
@@ -106,7 +100,7 @@ function Login() {
       </form>
 
       {isNotificationVisible ? (
-        <Notification title="Error" text={errorMessage} />
+        <Notification title={t("error.label")} text={errorMessage} />
       ) : (
         <></>
       )}
