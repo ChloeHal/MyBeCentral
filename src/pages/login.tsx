@@ -6,6 +6,7 @@ import Notification from "../component/Notification/Notification"; // import the
 import { useTranslation } from "react-i18next";
 import logo from "../content/logo.png";
 import bg from "../content/newbackblue.png";
+import Cookies from "js-cookie";
 
 function Login() {
   const navigateFeed = () => {
@@ -22,7 +23,6 @@ function Login() {
       (prevIsNotificationVisible) => !prevIsNotificationVisible
     );
   };
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loginFormData, setLoginFormData] = useState({
     email: "",
@@ -36,24 +36,25 @@ function Login() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(loginFormData);
+
     fetch("http://localhost:8081/api/v1/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(loginFormData),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data, "user");
-        if (!data.error) {
-          setIsLoggedIn(true);
-          localStorage.setItem("user", JSON.stringify(data));
+        if (data.status === true) {
+          const sessionId = data.details[2];
+          Cookies.set("sessionId", sessionId);
           navigate("/feed");
         } else {
+          setErrorMessage(data.message);
           setIsNotificationVisible(true);
-          setErrorMessage(data.error);
         }
       });
   };
@@ -100,7 +101,12 @@ function Login() {
       </form>
 
       {isNotificationVisible ? (
-        <Notification title={t("error.label")} text={errorMessage} />
+        <Notification
+          title={t("error.label")}
+          text={errorMessage}
+          open={isNotificationVisible}
+          clickHandler={() => setIsNotificationVisible(!isNotificationVisible)}
+        />
       ) : (
         <></>
       )}
