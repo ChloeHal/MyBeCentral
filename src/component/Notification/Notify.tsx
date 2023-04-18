@@ -2,17 +2,17 @@ import { MouseEventHandler, useState } from "react";
 interface props {
   title: string;
   text: JSX.Element | string;
-  open: boolean;
-  clickHandler: MouseEventHandler;
 }
-function Notification(props: props) {
+function Notify(props: props) {
+  let [isOpen, setIsOpen] = useState(true);
+
   return (
-    <dialog className="bg-transparent z-50" open={props.open}>
+    <dialog className="relative z-50" open={isOpen}>
       <div className="fixed inset-0 flex items-start justify-end m-4">
         <div className="w-full max-w-sm rounded p-4 bg-grey flex flex-col">
           <button
             className="fixed top-5 right-5  p-2"
-            onClick={props.clickHandler}
+            onClick={() => setIsOpen(false)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,5 +38,4 @@ function Notification(props: props) {
     </dialog>
   );
 }
-
-export default Notification;
+export default Notify;

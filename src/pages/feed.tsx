@@ -4,7 +4,7 @@ import Navbar from "../component/Navbar/navbar";
 import { useState, useEffect } from "react";
 import posts from "../assets/backend/posts";
 import { Filters } from "../assets/interface/Filters";
-import Notification from "../component/Notification/Notification";
+import Notify from "../component/Notification/Notify";
 import MessageInput from "../component/Post/MessageInput";
 import DragDrop from "../component/Drag&drop/Dragdrop";
 import GoBackTop from "../component/GoBackTop/GoBackTop";
@@ -14,7 +14,6 @@ function Feed() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSideBar = () => {
     setIsSidebarOpen(!isSidebarOpen);
-    console.log(isSidebarOpen);
   };
   const [filter, setFilter] = useState<Filters>({});
   const [noPost, setNoPost] = useState(false);
@@ -72,10 +71,7 @@ function Feed() {
     )
     .map(([key]) => key)
     .join(", ");
-  console.log(
-    matchingSomeFilters.length,
-    Object.values(filter).filter((value) => value === true).length
-  );
+
   return (
     <>
       <GoBackTop />
@@ -129,7 +125,7 @@ function Feed() {
                 postAcommentProps={profile}
               />
             ))}
-            <Notification
+            <Notify
               text={`Sorry, there are no posts for ${noPostsFilter}`}
               title="Oops"
             />
@@ -156,7 +152,7 @@ function Feed() {
               />
             ))}
             {noPost && matchingSomeFilters.length > 0 && (
-              <Notification
+              <Notify
                 text={`Sorry, there are no posts for ${noPostsFilter}`}
                 title="Oops"
               />
